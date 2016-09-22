@@ -19,6 +19,9 @@
 		84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */; };
 		84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */; };
 		84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */; };
+		84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9E1D9412180062EEA3 /* DQSearchBarButton.swift */; };
+		84C5FFA11D9412310062EEA3 /* DQSearchBarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FFA01D9412310062EEA3 /* DQSearchBarButton.xib */; };
+		84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseTabBar.swift; sourceTree = "<group>"; };
 		84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTempViewController.swift; sourceTree = "<group>"; };
+		84C5FF9E1D9412180062EEA3 /* DQSearchBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQSearchBarButton.swift; sourceTree = "<group>"; };
+		84C5FFA01D9412310062EEA3 /* DQSearchBarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQSearchBarButton.xib; sourceTree = "<group>"; };
+		84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,8 @@
 		84C5FF7C1D93F6150062EEA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84C5FF9E1D9412180062EEA3 /* DQSearchBarButton.swift */,
+				84C5FFA01D9412310062EEA3 /* DQSearchBarButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */,
+				84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -321,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C5FFA11D9412310062EEA3 /* DQSearchBarButton.xib in Resources */,
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
 			);
@@ -335,9 +345,11 @@
 			files = (
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
 				84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */,
+				84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */,
 				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,
 				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
+				84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */,
 				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
 				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
 				84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */,
