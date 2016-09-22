@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF641D93EE730062EEA3 /* AppDelegate.swift */; };
-		84C5FF671D93EE730062EEA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF661D93EE730062EEA3 /* ViewController.swift */; };
-		84C5FF6A1D93EE730062EEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF681D93EE730062EEA3 /* Main.storyboard */; };
 		84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */; };
 		84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */; };
+		84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF8B1D93F6C70062EEA3 /* DQHomeViewController.swift */; };
+		84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF8D1D93F6DE0062EEA3 /* DQMessageViewController.swift */; };
+		84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF8F1D93F72B0062EEA3 /* DQDiscoverViewController.swift */; };
+		84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF911D93F73D0062EEA3 /* DQProfileViewController.swift */; };
+		84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */; };
+		84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84C5FF611D93EE730062EEA3 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5FF641D93EE730062EEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C5FF661D93EE730062EEA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84C5FF691D93EE730062EEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C5FF6E1D93EE730062EEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C5FF701D93EE730062EEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C5FF8B1D93F6C70062EEA3 /* DQHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQHomeViewController.swift; sourceTree = "<group>"; };
+		84C5FF8D1D93F6DE0062EEA3 /* DQMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQMessageViewController.swift; sourceTree = "<group>"; };
+		84C5FF8F1D93F72B0062EEA3 /* DQDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQDiscoverViewController.swift; sourceTree = "<group>"; };
+		84C5FF911D93F73D0062EEA3 /* DQProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQProfileViewController.swift; sourceTree = "<group>"; };
+		84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseNavigationController.swift; sourceTree = "<group>"; };
+		84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,194 @@
 		84C5FF631D93EE730062EEA3 /* SinaWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				84C5FF761D93F6150062EEA3 /* Classes */,
 				84C5FF641D93EE730062EEA3 /* AppDelegate.swift */,
-				84C5FF661D93EE730062EEA3 /* ViewController.swift */,
-				84C5FF681D93EE730062EEA3 /* Main.storyboard */,
 				84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */,
 				84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */,
 				84C5FF701D93EE730062EEA3 /* Info.plist */,
 			);
 			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		84C5FF761D93F6150062EEA3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF7A1D93F6150062EEA3 /* View */,
+				84C5FF8A1D93F6150062EEA3 /* ViewModel */,
+				84C5FF771D93F6150062EEA3 /* Model */,
+				84C5FF791D93F6150062EEA3 /* Tool */,
+				84C5FF781D93F6150062EEA3 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		84C5FF771D93F6150062EEA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84C5FF781D93F6150062EEA3 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		84C5FF791D93F6150062EEA3 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF971D93F8630062EEA3 /* Extension */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		84C5FF7A1D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF811D93F6150062EEA3 /* Main */,
+				84C5FF7E1D93F6150062EEA3 /* Home */,
+				84C5FF841D93F6150062EEA3 /* Message */,
+				84C5FF7B1D93F6150062EEA3 /* Discover */,
+				84C5FF871D93F6150062EEA3 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF7B1D93F6150062EEA3 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF7C1D93F6150062EEA3 /* View */,
+				84C5FF7D1D93F6150062EEA3 /* ViewController */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		84C5FF7C1D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF7D1D93F6150062EEA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF8F1D93F72B0062EEA3 /* DQDiscoverViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C5FF7E1D93F6150062EEA3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF7F1D93F6150062EEA3 /* View */,
+				84C5FF801D93F6150062EEA3 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84C5FF7F1D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF801D93F6150062EEA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF8B1D93F6C70062EEA3 /* DQHomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C5FF811D93F6150062EEA3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF821D93F6150062EEA3 /* View */,
+				84C5FF831D93F6150062EEA3 /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84C5FF821D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF831D93F6150062EEA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */,
+				84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C5FF841D93F6150062EEA3 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF851D93F6150062EEA3 /* View */,
+				84C5FF861D93F6150062EEA3 /* ViewController */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		84C5FF851D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF861D93F6150062EEA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF8D1D93F6DE0062EEA3 /* DQMessageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C5FF871D93F6150062EEA3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF881D93F6150062EEA3 /* View */,
+				84C5FF891D93F6150062EEA3 /* ViewController */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84C5FF881D93F6150062EEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C5FF891D93F6150062EEA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C5FF911D93F73D0062EEA3 /* DQProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84C5FF8A1D93F6150062EEA3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84C5FF971D93F8630062EEA3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +278,7 @@
 		84C5FF591D93EE730062EEA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DQ;
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Derrick_Qin;
@@ -125,7 +314,6 @@
 			files = (
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
-				84C5FF6A1D93EE730062EEA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C5FF671D93EE730062EEA3 /* ViewController.swift in Sources */,
+				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
+				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
+				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
+				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
+				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
+				84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */,
 				84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +337,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		84C5FF681D93EE730062EEA3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84C5FF691D93EE730062EEA3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -258,7 +443,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DerrickQin.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +457,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DerrickQin.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
