@@ -16,6 +16,7 @@
 		84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF911D93F73D0062EEA3 /* DQProfileViewController.swift */; };
 		84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */; };
 		84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */; };
+		84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		84C5FF911D93F73D0062EEA3 /* DQProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQProfileViewController.swift; sourceTree = "<group>"; };
 		84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseNavigationController.swift; sourceTree = "<group>"; };
 		84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTabBarController.swift; sourceTree = "<group>"; };
+		84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		84C5FF821D93F6150062EEA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
+				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,
 				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
 				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
