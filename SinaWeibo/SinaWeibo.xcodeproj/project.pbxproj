@@ -17,6 +17,8 @@
 		84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */; };
 		84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */; };
 		84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */; };
+		84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */; };
+		84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		84C5FF931D93F7640062EEA3 /* DQBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseNavigationController.swift; sourceTree = "<group>"; };
 		84C5FF951D93F77F0062EEA3 /* DQTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTabBarController.swift; sourceTree = "<group>"; };
 		84C5FF981D94028B0062EEA3 /* DQBaseTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseTabBar.swift; sourceTree = "<group>"; };
+		84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTempViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		84C5FF781D93F6150062EEA3 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 		84C5FF971D93F8630062EEA3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,12 +334,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
+				84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */,
 				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,
 				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
 				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
 				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
 				84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */,
+				84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */,
 				84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
