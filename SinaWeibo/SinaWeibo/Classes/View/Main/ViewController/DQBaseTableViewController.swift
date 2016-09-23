@@ -34,6 +34,20 @@ class DQBaseTableViewController: UITableViewController, DQDQVisitorLoginViewDele
     //代理方法实现
     func userLogin() {
         print("登录按钮点击")
+        
+        //网络测试
+        let urlString = "http://www.weather.com.cn/data/sk/101010100.html"
+        
+        DQNetworkTools.sharedTools.requset(method: .Get, urlString: urlString, parameters: nil) { (responseObject, error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            //请求成功
+            print(responseObject!)
+        }
+        
     }
     
     func userRegister() {

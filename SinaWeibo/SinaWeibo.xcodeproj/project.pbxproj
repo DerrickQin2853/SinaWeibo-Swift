@@ -26,6 +26,7 @@
 		84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */; };
 		84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */; };
 		84F5DCD11D95548C00C95B57 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCD01D95548C00C95B57 /* UIButton+Extension.swift */; };
+		84F5DCD41D9566DB00C95B57 /* DQNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCD31D9566DB00C95B57 /* DQNetworkTools.swift */; };
 		89CF137954AA352E4A6BC93B /* Pods_SinaWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB46C4A75FF79CAC70C5D0F /* Pods_SinaWeibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQVisitorLoginView.swift; sourceTree = "<group>"; };
 		84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		84F5DCD01D95548C00C95B57 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		84F5DCD31D9566DB00C95B57 /* DQNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQNetworkTools.swift; sourceTree = "<group>"; };
 		CBB46C4A75FF79CAC70C5D0F /* Pods_SinaWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 		84C5FF791D93F6150062EEA3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				84F5DCD21D95658A00C95B57 /* NetworkTools */,
 				84C5FF971D93F8630062EEA3 /* Extension */,
 			);
 			path = Tool;
@@ -297,6 +300,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		84F5DCD21D95658A00C95B57 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				84F5DCD31D9566DB00C95B57 /* DQNetworkTools.swift */,
+			);
+			name = NetworkTools;
+			path = NetWorkTools;
+			sourceTree = "<group>";
+		};
 		A346926354F0956BE55F6C0B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +457,7 @@
 				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
 				84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */,
 				84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */,
+				84F5DCD41D9566DB00C95B57 /* DQNetworkTools.swift in Sources */,
 				84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
