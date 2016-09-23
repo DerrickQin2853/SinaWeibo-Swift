@@ -8,12 +8,15 @@
 
 import UIKit
 
-class DQDiscoverViewController: UITableViewController {
+class DQDiscoverViewController: DQBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.titleView = DQSearchBarButton.loadSearchButton()
+        
+        //设置游客界面信息
+        visitorLoginView.setPageInfo(tipText: "关注一些人快回到这里看看有什么惊喜", imageName: "visitordiscover_image_message")
     }
 
     override func didReceiveMemoryWarning() {

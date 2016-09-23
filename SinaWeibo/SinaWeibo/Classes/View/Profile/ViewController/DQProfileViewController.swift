@@ -8,16 +8,13 @@
 
 import UIKit
 
-class DQProfileViewController: UITableViewController {
+class DQProfileViewController: DQBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //设置游客界面信息
+        visitorLoginView.setPageInfo(tipText: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人", imageName: "visitordiscover_image_profile")
     }
 
     override func didReceiveMemoryWarning() {

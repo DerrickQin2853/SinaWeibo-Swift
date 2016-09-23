@@ -8,12 +8,15 @@
 
 import UIKit
 
-class DQHomeViewController: UITableViewController {
+class DQHomeViewController: DQBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightButtonItemClick))
+        
+        //设置游客界面信息
+        visitorLoginView.setPageInfo(tipText: "关注一些人,快回到这里看看有什么惊喜")
     }
     
     @objc private func rightButtonItemClick() {
