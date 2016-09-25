@@ -16,7 +16,7 @@ extension UIBarButtonItem {
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor.darkGray, for: .normal)
         button.setTitleColor(UIColor.orange, for: .highlighted)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         if imageName != nil {
             button.setImage(UIImage(named: imageName!), for: .normal)
             button.setImage(UIImage(named: imageName! + "_highlighted"), for: .highlighted)

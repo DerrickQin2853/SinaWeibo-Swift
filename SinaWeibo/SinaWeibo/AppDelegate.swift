@@ -18,7 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = DQTabBarController()
+        
+        if DQUserAccountViewModel.sharedViewModel.userLogin {
+            window?.rootViewController = DQWelcomeViewController()
+        }
+        else{
+            window?.rootViewController = DQTabBarController()
+        }
         
         window?.makeKeyAndVisible()
         
