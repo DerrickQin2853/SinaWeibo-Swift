@@ -11,7 +11,7 @@ import UIKit
 class DQBaseTableViewController: UITableViewController, DQDQVisitorLoginViewDelegate {
 
     //用户是否登录标签
-    var isUserLogin = false
+    var isUserLogin = DQUserAccountViewModel.sharedViewModel.userLogin
     //懒加载 游客界面
     lazy var visitorLoginView: DQVisitorLoginView = DQVisitorLoginView()
     
@@ -33,20 +33,12 @@ class DQBaseTableViewController: UITableViewController, DQDQVisitorLoginViewDele
 
     //代理方法实现
     func userLogin() {
-        print("登录按钮点击")
+        //model推送页面
+        let oauthVC = DQOauthViewController()
         
-        //网络测试
-        let urlString = "http://www.weather.com.cn/data/sk/101010100.html"
+        let oauthNavigationVC = UINavigationController(rootViewController: oauthVC)
         
-        DQNetworkTools.sharedTools.requset(method: .Get, urlString: urlString, parameters: nil) { (responseObject, error) in
-            
-            if error != nil {
-                print(error)
-                return
-            }
-            //请求成功
-            print(responseObject!)
-        }
+        present(oauthNavigationVC, animated: true, completion: nil)
         
     }
     

@@ -20,6 +20,7 @@ class DQNetworkTools: AFHTTPSessionManager {
     static let sharedTools: DQNetworkTools = {
        let tools = DQNetworkTools()
        tools.responseSerializer.acceptableContentTypes?.insert("text/html")
+        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
         return tools
     }()
     
