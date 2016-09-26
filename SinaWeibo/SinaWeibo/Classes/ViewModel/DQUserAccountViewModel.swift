@@ -36,6 +36,11 @@ class DQUserAccountViewModel: NSObject {
         return true
     }
     
+    var userIconURL: URL? {
+        let urlString = userInfo?.avatar_large ?? ""
+        let url = URL(string: urlString)
+        return url
+    }
     
     ///重写init
     override init() {

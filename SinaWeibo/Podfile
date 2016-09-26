@@ -9,4 +9,5 @@ target 'SinaWeibo' do
   pod 'SnapKit', '~> 3.0'
   pod 'AFNetworking', '~> 3.1'
   pod 'SVProgressHUD', '~> 2.0'
+  pod 'SDWebImage', '~> 3.8'
 end

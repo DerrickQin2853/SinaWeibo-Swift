@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 private let bottomMargin: CGFloat = 170
+private let iconImagePix: CGFloat = 85
 
 class DQWelcomeViewController: UIViewController {
 
@@ -27,7 +29,7 @@ class DQWelcomeViewController: UIViewController {
 
     ///执行动画方法
     private func startAnimation() {
-        let offsetY = -(UIScreen.main.bounds.size.height - bottomMargin - (iconView.image?.size.height)!)
+        let offsetY = -(UIScreen.main.bounds.size.height - bottomMargin - iconImagePix)
         
         iconView.snp.updateConstraints { (make) in
             make.bottom.equalTo(view).offset(offsetY)
@@ -54,19 +56,22 @@ class DQWelcomeViewController: UIViewController {
         iconView.snp.makeConstraints { (make) in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-bottomMargin)
+            make.size.equalTo(CGSize(width: iconImagePix, height: iconImagePix))
         }
         
         welcomeLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(iconView)
             make.top.equalTo(iconView.snp.bottom).offset(20)
         }
+        
+        iconView.sd_setImage(with: DQUserAccountViewModel.sharedViewModel.userIconURL)
     }
     
     ///懒加载控件
     private lazy var iconView: UIImageView = {
        let iconImageView = UIImageView(image: #imageLiteral(resourceName: "avatar_default_big"))
         //不是继承自 UIControl的不用masktobounds
-        iconImageView.cornerRadius = (iconImageView.image?.size.width)! / 2
+        iconImageView.cornerRadius = iconImagePix / 2
         iconImageView.layer.borderWidth = 3
         iconImageView.layer.borderColor = UIColor.orange.cgColor
         
