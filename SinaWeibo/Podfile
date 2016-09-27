@@ -10,4 +10,5 @@ target 'SinaWeibo' do
   pod 'AFNetworking', '~> 3.1'
   pod 'SVProgressHUD', '~> 2.0'
   pod 'SDWebImage', '~> 3.8'
+  pod 'YYModel', '~> 1.0'
 end

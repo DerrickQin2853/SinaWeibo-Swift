@@ -10,8 +10,15 @@
 		843025831D97F219006A9C9B /* DQOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025821D97F219006A9C9B /* DQOauthViewController.swift */; };
 		843025851D97F3DD006A9C9B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025841D97F3DD006A9C9B /* Common.swift */; };
 		843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025A81D9803DF006A9C9B /* DQUserAccountViewModel.swift */; };
-		843025AB1D98246D006A9C9B /* DQUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025AA1D98246D006A9C9B /* DQUserInfoModel.swift */; };
+		843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025AA1D98246D006A9C9B /* DQUserInfo.swift */; };
 		843025AD1D983056006A9C9B /* DQWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025AC1D983056006A9C9B /* DQWelcomeViewController.swift */; };
+		843025AF1D9A3ABC006A9C9B /* DQStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025AE1D9A3ABC006A9C9B /* DQStatuses.swift */; };
+		843025B11D9A3AF4006A9C9B /* DQUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B01D9A3AF4006A9C9B /* DQUser.swift */; };
+		843025B31D9A4310006A9C9B /* DQStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B21D9A4310006A9C9B /* DQStatusPictureInfo.swift */; };
+		843025B51D9A4A7F006A9C9B /* DQHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B41D9A4A7F006A9C9B /* DQHomeViewModel.swift */; };
+		843025B71D9A4A94006A9C9B /* DQStatusesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */; };
+		843025BA1D9A52BB006A9C9B /* DQStatusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */; };
+		843025BB1D9A52BB006A9C9B /* DQStatusesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */; };
 		84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF641D93EE730062EEA3 /* AppDelegate.swift */; };
 		84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */; };
 		84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */; };
@@ -41,8 +48,15 @@
 		843025821D97F219006A9C9B /* DQOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQOauthViewController.swift; sourceTree = "<group>"; };
 		843025841D97F3DD006A9C9B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		843025A81D9803DF006A9C9B /* DQUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQUserAccountViewModel.swift; sourceTree = "<group>"; };
-		843025AA1D98246D006A9C9B /* DQUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQUserInfoModel.swift; path = SinaWeibo/Classes/ViewModel/DQUserInfoModel.swift; sourceTree = SOURCE_ROOT; };
+		843025AA1D98246D006A9C9B /* DQUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQUserInfo.swift; path = SinaWeibo/Classes/ViewModel/DQUserInfo.swift; sourceTree = SOURCE_ROOT; };
 		843025AC1D983056006A9C9B /* DQWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQWelcomeViewController.swift; sourceTree = "<group>"; };
+		843025AE1D9A3ABC006A9C9B /* DQStatuses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQStatuses.swift; path = SinaWeibo/Classes/View/Oauth/ViewController/DQStatuses.swift; sourceTree = SOURCE_ROOT; };
+		843025B01D9A3AF4006A9C9B /* DQUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQUser.swift; path = SinaWeibo/Classes/View/Oauth/ViewController/DQUser.swift; sourceTree = SOURCE_ROOT; };
+		843025B21D9A4310006A9C9B /* DQStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQStatusPictureInfo.swift; path = SinaWeibo/Classes/View/Oauth/ViewController/DQStatusPictureInfo.swift; sourceTree = SOURCE_ROOT; };
+		843025B41D9A4A7F006A9C9B /* DQHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQHomeViewModel.swift; sourceTree = "<group>"; };
+		843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQStatusesViewModel.swift; sourceTree = "<group>"; };
+		843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQStatusesCell.swift; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.swift; sourceTree = SOURCE_ROOT; };
+		843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQStatusesCell.xib; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.xib; sourceTree = SOURCE_ROOT; };
 		84C5FF611D93EE730062EEA3 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5FF641D93EE730062EEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,7 +172,10 @@
 		84C5FF771D93F6150062EEA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				843025AA1D98246D006A9C9B /* DQUserInfoModel.swift */,
+				843025AA1D98246D006A9C9B /* DQUserInfo.swift */,
+				843025AE1D9A3ABC006A9C9B /* DQStatuses.swift */,
+				843025B01D9A3AF4006A9C9B /* DQUser.swift */,
+				843025B21D9A4310006A9C9B /* DQStatusPictureInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +249,8 @@
 		84C5FF7F1D93F6150062EEA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */,
+				843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				843025A81D9803DF006A9C9B /* DQUserAccountViewModel.swift */,
+				843025B41D9A4A7F006A9C9B /* DQHomeViewModel.swift */,
+				843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -420,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843025BB1D9A52BB006A9C9B /* DQStatusesCell.xib in Resources */,
 				84C5FFA11D9412310062EEA3 /* DQSearchBarButton.xib in Resources */,
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
@@ -483,21 +505,27 @@
 			files = (
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
 				84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */,
+				843025B51D9A4A7F006A9C9B /* DQHomeViewModel.swift in Sources */,
+				843025B71D9A4A94006A9C9B /* DQStatusesViewModel.swift in Sources */,
+				843025BA1D9A52BB006A9C9B /* DQStatusesCell.swift in Sources */,
 				843025AD1D983056006A9C9B /* DQWelcomeViewController.swift in Sources */,
 				84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */,
 				84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */,
-				843025AB1D98246D006A9C9B /* DQUserInfoModel.swift in Sources */,
+				843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */,
 				843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */,
 				84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */,
 				84F5DCD11D95548C00C95B57 /* UIButton+Extension.swift in Sources */,
 				84F5DCCB1D954EC200C95B57 /* DQBaseTableViewController.swift in Sources */,
 				843025831D97F219006A9C9B /* DQOauthViewController.swift in Sources */,
+				843025B11D9A3AF4006A9C9B /* DQUser.swift in Sources */,
 				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,
 				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
 				84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */,
+				843025AF1D9A3ABC006A9C9B /* DQStatuses.swift in Sources */,
 				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
 				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
+				843025B31D9A4310006A9C9B /* DQStatusPictureInfo.swift in Sources */,
 				84C5FF941D93F7640062EEA3 /* DQBaseNavigationController.swift in Sources */,
 				843025851D97F3DD006A9C9B /* Common.swift in Sources */,
 				84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */,

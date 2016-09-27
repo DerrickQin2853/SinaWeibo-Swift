@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DQUserInfoModel: NSObject, NSCoding {
+class DQUserInfo: NSObject, NSCoding {
 
     var access_token: String?
     

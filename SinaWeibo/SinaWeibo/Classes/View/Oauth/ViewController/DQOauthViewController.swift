@@ -88,7 +88,7 @@ extension DQOauthViewController: UIWebViewDelegate {
             
             DQUserAccountViewModel.sharedViewModel.loadAccessToken(code: code, finish: { (isSuccess) in
                 if !isSuccess {
-                    SVProgressHUD.showError(withStatus: "网络出现问题")
+                    SVProgressHUD.showError(withStatus: errorTip)
                     return
                 }
                 

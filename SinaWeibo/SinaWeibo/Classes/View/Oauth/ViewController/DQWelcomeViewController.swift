@@ -18,6 +18,8 @@ class DQWelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupSubviews()
+        
+        view.backgroundColor = UIColor.white
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,5 +85,5 @@ class DQWelcomeViewController: UIViewController {
         label.alpha = 0
         return label
     }()
-
+    
 }

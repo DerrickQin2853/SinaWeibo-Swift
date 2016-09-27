@@ -21,7 +21,7 @@ class DQUserAccountViewModel: NSObject {
      1. 用户未登陆 -> 输入用户名,密码 -> 授权 -> 截取code -> code 换token, 获取用户信息 -> 给用户信息赋值
      2. 用户已经登陆,第二次打开应用的时候 -> 从沙盒中获取用户信息  -> 给 userAccount赋值
      */
-    var userInfo: DQUserInfoModel?
+    var userInfo: DQUserInfo?
     
     var userLogin: Bool {
         if userInfo?.access_token != nil && isExpires == false {
@@ -91,7 +91,7 @@ class DQUserAccountViewModel: NSObject {
             }
             
             //字典转模型
-            let userInfoModel = DQUserInfoModel.init(dict: userInfoDict)
+            let userInfoModel = DQUserInfo.init(dict: userInfoDict)
             
             self.saveUserInfoToLocal(userInfoModel: userInfoModel)
             
@@ -103,13 +103,13 @@ class DQUserAccountViewModel: NSObject {
         
     }
     //用户信息存入本地
-    private func saveUserInfoToLocal(userInfoModel: DQUserInfoModel) {
+    private func saveUserInfoToLocal(userInfoModel: DQUserInfo) {
         NSKeyedArchiver.archiveRootObject(userInfoModel, toFile: localPathForUserInfo)
     }
     
     //从本地读取用户信息
-    private func loadUserInfoFromLocal() -> DQUserInfoModel? {
-        let userInfoModel = NSKeyedUnarchiver.unarchiveObject(withFile: localPathForUserInfo) as? DQUserInfoModel
+    private func loadUserInfoFromLocal() -> DQUserInfo? {
+        let userInfoModel = NSKeyedUnarchiver.unarchiveObject(withFile: localPathForUserInfo) as? DQUserInfo
         return userInfoModel
     }
 }
