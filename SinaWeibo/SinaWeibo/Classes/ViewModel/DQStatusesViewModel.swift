@@ -26,7 +26,7 @@ class DQStatusesViewModel: NSObject {
     //didSet方法封装到外面来
     
     private func getAvatarIconURL() {
-        let urlString = status?.pic_urls?.thumbnail_pic ?? ""
+        let urlString = status?.user?.avatar_large ?? ""
         avatarIconURL = URL(string: urlString)
     }
     private func getAvatarTypeImage() {

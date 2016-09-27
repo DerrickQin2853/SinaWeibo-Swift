@@ -31,7 +31,6 @@ class DQHomeViewController: DQBaseTableViewController {
                 SVProgressHUD.showError(withStatus: errorTip)
                 return
             }
-            print(self.homeViewModel)
             //返回成功 刷新
             self.tableView.reloadData()
         }
@@ -50,6 +49,8 @@ class DQHomeViewController: DQBaseTableViewController {
         tableView.rowHeight = 450
         //分割线
         tableView.separatorStyle = .none
+        //隐藏滑动条
+        tableView.showsVerticalScrollIndicator = false
     }
     
 }
@@ -65,7 +66,9 @@ extension DQHomeViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: DQStatusesCellID, for: indexPath) as! DQStatusesCell
         
-        cell.textLabel?.text = "\(indexPath.row)"
+        let statusViewModel = homeViewModel.statusesViewModelArray[indexPath.row]
+        
+        cell.statusViewModel = statusViewModel
         
         return cell
     }
