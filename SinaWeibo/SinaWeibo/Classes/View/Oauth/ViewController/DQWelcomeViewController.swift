@@ -41,7 +41,7 @@ class DQWelcomeViewController: UIViewController {
                 UIView.animate(withDuration: 2, animations: {
                     self.welcomeLabel.alpha = 1
                     }, completion: { (true) in
-                        UIApplication.shared.keyWindow?.rootViewController = DQTabBarController()
+                        NotificationCenter.default.post(name: Notification.Name(kChangeRootControllerNotification), object: "TabBar")
                 })
         }
     }

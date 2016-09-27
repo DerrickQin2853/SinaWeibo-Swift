@@ -56,6 +56,12 @@ class DQOauthViewController: UIViewController {
         
     }
 
+    //防止旋转条的卡顿
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SVProgressHUD.dismiss()
+    }
+
 }
 
 extension DQOauthViewController: UIWebViewDelegate {
@@ -86,8 +92,7 @@ extension DQOauthViewController: UIWebViewDelegate {
                     return
                 }
                 
-                print("用户登录成功")
-                //待编写跳转功能
+                NotificationCenter.default.post(name: Notification.Name(kChangeRootControllerNotification), object: "Welcome")
                 
             })
             return false
