@@ -10,6 +10,11 @@ import UIKit
 import SDWebImage
 
 private let commonMargin: CGFloat = 8
+private let pictureCellMargin: CGFloat = 3
+//pictureView的最大宽度
+private let pictureViewMaxWidth: CGFloat = ScreenWidth - 2 * commonMargin
+//每张图片的宽高
+private let pictureWH: CGFloat = (pictureViewMaxWidth - 2 * pictureCellMargin) / 3
 
 class DQStatusesCell: UITableViewCell {
 
@@ -20,6 +25,12 @@ class DQStatusesCell: UITableViewCell {
     @IBOutlet weak var sinceTimeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var pictureView: DQPictureView!
+    @IBOutlet weak var pictureViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var pictureViewWidthCons: NSLayoutConstraint!
+    @IBOutlet weak var pictureViewHeightCons: NSLayoutConstraint!
+    @IBOutlet weak var pictureViewTopCons: NSLayoutConstraint!
+    
     
     var statusViewModel: DQStatusesViewModel? {
         didSet{
@@ -31,6 +42,13 @@ class DQStatusesCell: UITableViewCell {
             sourceLabel.text = statusViewModel?.status?.source
             contentLabel.text = statusViewModel?.status?.text
             
+            let picCount = statusViewModel?.status?.pic_urls?.count ?? 0
+            let picViewSize = setPictureViewSize(pictureCount: picCount)
+            pictureViewWidthCons.constant = picViewSize.width
+            pictureViewHeightCons.constant = picViewSize.height
+            pictureViewTopCons.constant = picCount == 0 ? 0 : commonMargin
+            
+            pictureView.pictureInfos = statusViewModel?.status?.pic_urls
         }
     }
     
@@ -39,19 +57,33 @@ class DQStatusesCell: UITableViewCell {
         //cell选中样式
         selectionStyle = .none
         //内容换行
-        let aa =  ScreenWidth - commonMargin * 2
-        
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - commonMargin * 2
         
+        //设置flowlayout
+        pictureViewFlowLayout.itemSize = CGSize(width: pictureWH, height: pictureWH)
         
-        
-        
+        pictureViewFlowLayout.minimumInteritemSpacing = pictureCellMargin
+        pictureViewFlowLayout.minimumLineSpacing = pictureCellMargin
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    //根据图片张数设置pictureView的大小
+    private func setPictureViewSize(pictureCount: Int) -> CGSize {
+        if pictureCount == 0 {
+            return CGSize.zero
+        }
+        else if pictureCount == 4 {
+            let WH = pictureWH * 2 + pictureCellMargin
+            return CGSize(width: WH, height: WH)
+        }
+        else {
+            let rowCount = CGFloat(pictureCount - 1) / 3 + 1
+            let h = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
+            
+            return CGSize(width: pictureViewMaxWidth, height: h)
+            
+        }
     }
+    
+    
     
 }

@@ -22,7 +22,7 @@ class DQStatuses: NSObject, YYModel {
     
     var user: DQUser?
     
-    var pic_urls: DQStatusPictureInfo?
+    var pic_urls: [DQStatusPictureInfo]?
     
     //实际上是告诉YYModel在转换字典数组的时候 需要将字典转成什么类型的模型对象
 

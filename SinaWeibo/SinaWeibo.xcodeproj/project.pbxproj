@@ -19,6 +19,7 @@
 		843025B71D9A4A94006A9C9B /* DQStatusesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */; };
 		843025BA1D9A52BB006A9C9B /* DQStatusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */; };
 		843025BB1D9A52BB006A9C9B /* DQStatusesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */; };
+		845CFBE11D9AE0E800C56951 /* DQPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE01D9AE0E800C56951 /* DQPictureView.swift */; };
 		84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF641D93EE730062EEA3 /* AppDelegate.swift */; };
 		84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */; };
 		84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQStatusesViewModel.swift; sourceTree = "<group>"; };
 		843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQStatusesCell.swift; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.swift; sourceTree = SOURCE_ROOT; };
 		843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQStatusesCell.xib; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.xib; sourceTree = SOURCE_ROOT; };
+		845CFBE01D9AE0E800C56951 /* DQPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQPictureView.swift; path = SinaWeibo/Classes/ViewModel/DQPictureView.swift; sourceTree = SOURCE_ROOT; };
 		84C5FF611D93EE730062EEA3 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5FF641D93EE730062EEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */,
 				843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */,
+				845CFBE01D9AE0E800C56951 /* DQPictureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */,
 				84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */,
 				84F5DCD11D95548C00C95B57 /* UIButton+Extension.swift in Sources */,
+				845CFBE11D9AE0E800C56951 /* DQPictureView.swift in Sources */,
 				84F5DCCB1D954EC200C95B57 /* DQBaseTableViewController.swift in Sources */,
 				843025831D97F219006A9C9B /* DQOauthViewController.swift in Sources */,
 				843025B11D9A3AF4006A9C9B /* DQUser.swift in Sources */,
