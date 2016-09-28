@@ -82,6 +82,14 @@ extension DQHomeViewController {
     }
     
     
+    //设置行高
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let statusViewModel = homeViewModel.statusesViewModelArray[indexPath.row]
+        let cellId = getCellIdWithViewModel(viewModel: statusViewModel)
+        let cell = getCellWithCellId(cellId: cellId)
+        return cell.getRowHeight(viewModel: statusViewModel)
+    }
+    
     
     private func getCellIdWithViewModel(viewModel: DQStatusesViewModel) -> String {
         if viewModel.status?.retweeted_status != nil {
@@ -90,6 +98,12 @@ extension DQHomeViewController {
         else{
             return DQStatusesCellID
         }
+    }
+    
+    private func getCellWithCellId(cellId: String) -> DQStatusesCell {
+        let nibName = cellId == DQStatusesCellID ? "DQStatusesCell" : "DQRetweetedCell"
+        return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).last as! DQStatusesCell
+        
     }
     
 }

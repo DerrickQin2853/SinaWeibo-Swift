@@ -151,6 +151,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="attitudesButton" destination="1K9-2W-K6m" id="Tp5-jx-3SB"/>
+                <outlet property="bottomBar" destination="GiR-uG-HvD" id="gWP-mU-imG"/>
                 <outlet property="commentButton" destination="TDn-69-y9V" id="3jI-6x-YmT"/>
                 <outlet property="contentLabel" destination="UeB-gc-lmn" id="18e-w9-2w2"/>
                 <outlet property="membershipLevelImageView" destination="NWI-nA-zqE" id="fve-bm-a4R"/>

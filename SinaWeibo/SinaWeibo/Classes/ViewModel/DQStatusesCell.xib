@@ -133,6 +133,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="attitudesButton" destination="zqY-zh-wYG" id="i9h-uD-d9s"/>
+                <outlet property="bottomBar" destination="PVh-Xb-Un1" id="ovg-XF-Was"/>
                 <outlet property="commentButton" destination="V1x-1u-hWe" id="Kkr-Lv-Y9Z"/>
                 <outlet property="contentLabel" destination="uyn-Gc-qgh" id="xbQ-82-m8H"/>
                 <outlet property="membershipLevelImageView" destination="U2Y-z0-PSP" id="gdK-RN-NP9"/>

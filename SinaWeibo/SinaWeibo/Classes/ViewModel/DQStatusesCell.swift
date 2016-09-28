@@ -35,6 +35,7 @@ class DQStatusesCell: UITableViewCell {
     @IBOutlet weak var attitudesButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var repostButton: UIButton!
+    @IBOutlet weak var bottomBar: UIView!
     
     var statusViewModel: DQStatusesViewModel? {
         didSet{
@@ -76,6 +77,13 @@ class DQStatusesCell: UITableViewCell {
         pictureViewFlowLayout.minimumLineSpacing = pictureCellMargin
     }
     
+    func getRowHeight(viewModel: DQStatusesViewModel) -> CGFloat {
+        self.statusViewModel = viewModel
+        self.contentView.layoutIfNeeded()
+        return bottomBar.frame.maxY
+    }
+    
+    
     //根据图片张数设置pictureView的大小
     private func setPictureViewSize(pictureCount: Int) -> CGSize {
         if pictureCount == 0 {
@@ -86,7 +94,7 @@ class DQStatusesCell: UITableViewCell {
             return CGSize(width: WH, height: WH)
         }
         else {
-            //加不加括号?
+            //#Warning 加不加括号?
             let rowCount = CGFloat((pictureCount - 1) / 3 + 1)
             let h = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
             
