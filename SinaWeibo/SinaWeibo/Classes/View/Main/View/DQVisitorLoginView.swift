@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-@objc protocol DQDQVisitorLoginViewDelegate: NSObjectProtocol {
+@objc protocol DQVisitorLoginViewDelegate: NSObjectProtocol {
     @objc optional func userLogin()
     @objc optional func userRegister()
 }
@@ -17,7 +17,7 @@ import SnapKit
 class DQVisitorLoginView: UIView {
 
     //代理
-    weak var delegate: DQDQVisitorLoginViewDelegate?
+    weak var delegate: DQVisitorLoginViewDelegate?
     
     //对外设置信息方法
     func setPageInfo(tipText: String, imageName: String? = nil) {

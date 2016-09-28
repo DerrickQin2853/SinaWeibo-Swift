@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DQBaseTableViewController: UITableViewController, DQDQVisitorLoginViewDelegate {
+class DQBaseTableViewController: UITableViewController, DQVisitorLoginViewDelegate {
 
     //用户是否登录标签
     var isUserLogin = DQUserAccountViewModel.sharedViewModel.userLogin

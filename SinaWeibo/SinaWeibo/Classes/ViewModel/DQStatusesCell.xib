@@ -132,6 +132,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="attitudesButton" destination="zqY-zh-wYG" id="i9h-uD-d9s"/>
+                <outlet property="commentButton" destination="V1x-1u-hWe" id="Kkr-Lv-Y9Z"/>
                 <outlet property="contentLabel" destination="uyn-Gc-qgh" id="xbQ-82-m8H"/>
                 <outlet property="membershipLevelImageView" destination="U2Y-z0-PSP" id="gdK-RN-NP9"/>
                 <outlet property="pictureView" destination="kcB-7s-qN4" id="H6I-xK-cVx"/>
@@ -139,6 +141,7 @@
                 <outlet property="pictureViewHeightCons" destination="wp3-wm-U49" id="f1w-0k-kIg"/>
                 <outlet property="pictureViewTopCons" destination="2n5-hc-lQ8" id="tw4-Om-4zw"/>
                 <outlet property="pictureViewWidthCons" destination="mkk-O5-6Fd" id="rFr-rm-1qL"/>
+                <outlet property="repostButton" destination="2Xx-kA-f2g" id="cU4-Os-ebu"/>
                 <outlet property="sinceTimeLabel" destination="adH-gd-gVg" id="Ztv-4s-9yR"/>
                 <outlet property="sourceLabel" destination="ctu-Mf-iHr" id="e1D-E8-ngE"/>
                 <outlet property="userIconImageView" destination="21E-kL-63j" id="1Nh-pz-v2h"/>

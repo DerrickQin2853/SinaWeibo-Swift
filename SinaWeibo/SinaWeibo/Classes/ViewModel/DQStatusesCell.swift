@@ -31,6 +31,10 @@ class DQStatusesCell: UITableViewCell {
     @IBOutlet weak var pictureViewHeightCons: NSLayoutConstraint!
     @IBOutlet weak var pictureViewTopCons: NSLayoutConstraint!
     
+    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var attitudesButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var repostButton: UIButton!
     
     var statusViewModel: DQStatusesViewModel? {
         didSet{
@@ -42,13 +46,19 @@ class DQStatusesCell: UITableViewCell {
             sourceLabel.text = statusViewModel?.status?.source
             contentLabel.text = statusViewModel?.status?.text
             
-            let picCount = statusViewModel?.status?.pic_urls?.count ?? 0
+            let picCount = statusViewModel?.pictureInfos?.count ?? 0
             let picViewSize = setPictureViewSize(pictureCount: picCount)
             pictureViewWidthCons.constant = picViewSize.width
             pictureViewHeightCons.constant = picViewSize.height
             pictureViewTopCons.constant = picCount == 0 ? 0 : commonMargin
             
-            pictureView.pictureInfos = statusViewModel?.status?.pic_urls
+            pictureView.pictureInfos = statusViewModel?.pictureInfos
+            
+            repostButton.setTitle(statusViewModel?.reposts_text, for: .normal)
+            commentButton.setTitle(statusViewModel?.comments_text, for: .normal)
+            attitudesButton.setTitle(statusViewModel?.attitudes_text, for: .normal)
+            //转发文字
+            retweetedContentLabel?.text = statusViewModel?.status?.retweeted_status?.text
         }
     }
     
@@ -58,7 +68,7 @@ class DQStatusesCell: UITableViewCell {
         selectionStyle = .none
         //内容换行
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - commonMargin * 2
-        
+        retweetedContentLabel?.preferredMaxLayoutWidth = ScreenWidth - commonMargin * 2
         //设置flowlayout
         pictureViewFlowLayout.itemSize = CGSize(width: pictureWH, height: pictureWH)
         
@@ -76,7 +86,8 @@ class DQStatusesCell: UITableViewCell {
             return CGSize(width: WH, height: WH)
         }
         else {
-            let rowCount = CGFloat(pictureCount - 1) / 3 + 1
+            //加不加括号?
+            let rowCount = CGFloat((pictureCount - 1) / 3 + 1)
             let h = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
             
             return CGSize(width: pictureViewMaxWidth, height: h)

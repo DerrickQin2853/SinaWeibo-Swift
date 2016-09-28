@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 
 private let DQStatusesCellID = "DQStatusesCell"
+private let DQRetweetedCellID = "DQRetweetedCell"
 
 class DQHomeViewController: DQBaseTableViewController {
 
@@ -45,13 +46,16 @@ class DQHomeViewController: DQBaseTableViewController {
         //注册CELL
         let nib = UINib(nibName: "DQStatusesCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DQStatusesCellID)
+        let retweetednib = UINib(nibName: "DQRetweetedCell", bundle: nil)
+        tableView.register(retweetednib, forCellReuseIdentifier: DQRetweetedCellID)
         //行高
-        tableView.rowHeight = 450
+        tableView.rowHeight = 600
         //分割线
         tableView.separatorStyle = .none
         //隐藏滑动条
         tableView.showsVerticalScrollIndicator = false
     }
+    
     
 }
 
@@ -64,13 +68,28 @@ extension DQHomeViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: DQStatusesCellID, for: indexPath) as! DQStatusesCell
-        
         let statusViewModel = homeViewModel.statusesViewModelArray[indexPath.row]
         
+        //判断是否用转发xib微博
+        
+        let cellID = getCellIdWithViewModel(viewModel: statusViewModel)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DQStatusesCell
+
         cell.statusViewModel = statusViewModel
         
         return cell
+    }
+    
+    
+    
+    private func getCellIdWithViewModel(viewModel: DQStatusesViewModel) -> String {
+        if viewModel.status?.retweeted_status != nil {
+            return DQRetweetedCellID
+        }
+        else{
+            return DQStatusesCellID
+        }
     }
     
 }
