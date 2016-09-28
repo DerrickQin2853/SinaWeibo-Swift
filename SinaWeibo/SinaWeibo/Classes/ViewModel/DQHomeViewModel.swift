@@ -12,9 +12,22 @@ class DQHomeViewModel: NSObject {
     //懒加载
     lazy var statusesViewModelArray: [DQStatusesViewModel] = [DQStatusesViewModel]()
     
-    func loadData(finish:@escaping (Bool) -> ()) {
+    func loadData(isPullUp: Bool, finish:@escaping (Bool) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parameters = ["access_token":DQUserAccountViewModel.sharedViewModel.userInfo?.access_token ?? ""]
+        var parameters = ["access_token":DQUserAccountViewModel.sharedViewModel.userInfo?.access_token ?? ""]
+        
+        //添加上拉下拉刷新的判断
+        if isPullUp {
+            //上拉
+            let max_id = (statusesViewModelArray.last?.status?.id ?? 0) - 1
+            parameters["max_id"] = "\(max_id)"
+        }
+        else{
+            //下拉
+            let since_id = statusesViewModelArray.first?.status?.id ?? 0
+            parameters["since_id"] = "\(since_id)"
+        }
+        
         
         DQNetworkTools.sharedTools.requset(method: .Get, urlString: urlString, parameters: parameters) { (responseObject, error) in
             if error != nil {
@@ -29,14 +42,23 @@ class DQHomeViewModel: NSObject {
                 return
             }
             
+            var tempArray = [DQStatusesViewModel]()
+            
             for item in statusesArray {
                 let statusesViewModel = DQStatusesViewModel()
                 let status = DQStatuses()
                 status.yy_modelSet(with: item)
                 statusesViewModel.status = status
-                self.statusesViewModelArray.append(statusesViewModel)
+                tempArray.append(statusesViewModel)
             }
             //执行成功
+            if isPullUp {
+                self.statusesViewModelArray = self.statusesViewModelArray + tempArray
+            }
+            else{
+                self.statusesViewModelArray = tempArray + self.statusesViewModelArray
+            }
+            
             
             finish(true)
         }

@@ -27,20 +27,29 @@ class DQHomeViewController: DQBaseTableViewController {
         
         setupTableView()
         
-        homeViewModel.loadData { (isSuccess) in
-            if !isSuccess {
-                SVProgressHUD.showError(withStatus: errorTip)
-                return
-            }
-            //返回成功 刷新
-            self.tableView.reloadData()
-        }
-       
+        loadData()
+        
+        
     }
     
     @objc private func rightButtonItemClick() {
         navigationController?.pushViewController(DQTempViewController(), animated: true)
     }
+    //为什么用internal??
+    internal func loadData() {
+        
+        homeViewModel.loadData(isPullUp: indicatorView.isAnimating) { (isSuccess) in
+            if !isSuccess {
+                SVProgressHUD.showError(withStatus: errorTip)
+                return
+            }
+            //indicator停止转动
+            self.indicatorView.stopAnimating()
+            //返回成功 刷新
+            self.tableView.reloadData()
+        }
+    }
+    
     
     private func setupTableView() {
         //注册CELL
@@ -54,7 +63,16 @@ class DQHomeViewController: DQBaseTableViewController {
         tableView.separatorStyle = .none
         //隐藏滑动条
         tableView.showsVerticalScrollIndicator = false
+        
+        tableView.tableFooterView = indicatorView
+        
     }
+    
+    lazy var indicatorView: UIActivityIndicatorView = {
+       
+        let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        return indicatorView
+    }()
     
     
 }
@@ -79,6 +97,14 @@ extension DQHomeViewController {
         cell.statusViewModel = statusViewModel
         
         return cell
+    }
+    
+    //静默加载
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == homeViewModel.statusesViewModelArray.count - 2 && !indicatorView.isAnimating {
+            indicatorView.startAnimating()
+            loadData()
+        }
     }
     
     

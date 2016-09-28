@@ -11,4 +11,6 @@ import UIKit
 class DQStatusPictureInfo: NSObject {
     
     var thumbnail_pic: String?
+    
+//    var bmiddle_pic: String?
 }
