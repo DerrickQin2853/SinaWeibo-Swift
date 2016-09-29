@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kcB-7s-qN4" customClass="DQPictureView" customModule="SinaWeibo" customModuleProvider="target">
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="240" id="mkk-O5-6Fd"/>
                             <constraint firstAttribute="height" constant="128" id="wp3-wm-U49"/>
@@ -143,6 +143,7 @@
                 <outlet property="pictureViewTopCons" destination="2n5-hc-lQ8" id="tw4-Om-4zw"/>
                 <outlet property="pictureViewWidthCons" destination="mkk-O5-6Fd" id="rFr-rm-1qL"/>
                 <outlet property="repostButton" destination="2Xx-kA-f2g" id="cU4-Os-ebu"/>
+                <outlet property="sepratorBarHeightCons" destination="SFa-AG-VDj" id="nc0-hy-ZyB"/>
                 <outlet property="sinceTimeLabel" destination="adH-gd-gVg" id="Ztv-4s-9yR"/>
                 <outlet property="sourceLabel" destination="ctu-Mf-iHr" id="e1D-E8-ngE"/>
                 <outlet property="userIconImageView" destination="21E-kL-63j" id="1Nh-pz-v2h"/>

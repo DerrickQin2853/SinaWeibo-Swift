@@ -162,6 +162,7 @@
                 <outlet property="pictureViewWidthCons" destination="tAO-p7-pdT" id="KfV-oS-FlB"/>
                 <outlet property="repostButton" destination="zrh-mt-0fy" id="Hg7-Tr-EOf"/>
                 <outlet property="retweetedContentLabel" destination="xlK-ff-31e" id="iiQ-p0-iYg"/>
+                <outlet property="sepratorBarHeightCons" destination="0eK-v5-KWQ" id="aia-8e-zcY"/>
                 <outlet property="sinceTimeLabel" destination="mmW-Oj-8yf" id="KLJ-ON-fT7"/>
                 <outlet property="sourceLabel" destination="eEK-sA-OQw" id="oKF-GH-qyX"/>
                 <outlet property="userIconImageView" destination="2bZ-j8-R4l" id="cJC-kY-rrs"/>

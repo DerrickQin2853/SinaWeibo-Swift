@@ -36,6 +36,7 @@ class DQStatusesCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var repostButton: UIButton!
     @IBOutlet weak var bottomBar: UIView!
+    @IBOutlet weak var sepratorBarHeightCons: NSLayoutConstraint!
     
     var statusViewModel: DQStatusesViewModel? {
         didSet{
@@ -52,7 +53,7 @@ class DQStatusesCell: UITableViewCell {
             pictureViewWidthCons.constant = picViewSize.width
             pictureViewHeightCons.constant = picViewSize.height
             pictureViewTopCons.constant = picCount == 0 ? 0 : commonMargin
-            
+            sepratorBarHeightCons.constant = (statusViewModel?.isFisrt)! ? 0 : 10
             pictureView.pictureInfos = statusViewModel?.pictureInfos
             
             repostButton.setTitle(statusViewModel?.reposts_text, for: .normal)
@@ -102,7 +103,4 @@ class DQStatusesCell: UITableViewCell {
             
         }
     }
-    
-    
-    
 }

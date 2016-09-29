@@ -17,6 +17,8 @@ let client_id = "2288790350"
 let client_secret = "d928fdf706d6a235e9eee46a8e0b85e0"
 let redirect_uri = "http://www.itheima.com"
 
+let navBarHeight: CGFloat = 64
+
 let errorTip = "网络出现错误"
 
 let kChangeRootControllerNotification = "ChangeRootControllerNotification"

@@ -69,7 +69,4 @@ class DQPictureCell: UICollectionViewCell {
         return tempImageView
     }()
     
-    
-    
-    
 }

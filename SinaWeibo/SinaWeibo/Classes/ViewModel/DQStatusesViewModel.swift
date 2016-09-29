@@ -17,6 +17,7 @@ class DQStatusesViewModel: NSObject {
             dealAvatarTypeImage()
             dealMembershipImage()
             dealBottomBarButton()
+            dealSourceText()
         }
     }
     
@@ -35,6 +36,12 @@ class DQStatusesViewModel: NSObject {
     var pictureInfos: [DQStatusPictureInfo]? {
         return status?.retweeted_status == nil ? status?.pic_urls : status?.retweeted_status?.pic_urls
     }
+    
+    var sourceText: String?
+    
+    var sinceTimeText: String?
+    
+    var isFisrt: Bool = false
     
     //didSet方法封装到外面来
     
@@ -78,5 +85,17 @@ class DQStatusesViewModel: NSObject {
         }
 //        return count.description
         return "\(count)"
+    }
+    
+    func dealIsFirst(index: Int) {
+        if index == 0 {
+            isFisrt = true
+        }
+    }
+    
+    private func dealSourceText() {
+//        let startRange = status?.source?.range(of: "rel=\"nofollow\">")
+//        let endRange = status?.source?.range(of: "</a>")
+        
     }
 }
