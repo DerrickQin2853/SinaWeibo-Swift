@@ -82,12 +82,6 @@ class DQHomeViewController: DQBaseTableViewController {
         
         homeRefreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         view.addSubview(homeRefreshControl)
-//                //添加系统的刷新控件
-//                refreshControl = UIRefreshControl()
-//                //添加监听事件
-//                refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        
-        
         tipLabel.frame.origin.y = navBarHeight - 35
         navigationController?.view.addSubview(tipLabel)
         navigationController?.view.insertSubview(tipLabel, belowSubview: self.navigationController!.navigationBar)

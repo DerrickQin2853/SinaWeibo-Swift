@@ -22,6 +22,7 @@
 		845CFBE11D9AE0E800C56951 /* DQPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE01D9AE0E800C56951 /* DQPictureView.swift */; };
 		845CFBE31D9BDF8800C56951 /* DQRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */; };
 		845CFBE51D9C349800C56951 /* DQRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE41D9C349800C56951 /* DQRefreshControl.swift */; };
+		84B940BC1DA6B7A20036BDA3 /* DQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */; };
 		84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF641D93EE730062EEA3 /* AppDelegate.swift */; };
 		84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */; };
 		84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */; };
@@ -63,6 +64,7 @@
 		845CFBE01D9AE0E800C56951 /* DQPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQPictureView.swift; path = SinaWeibo/Classes/ViewModel/DQPictureView.swift; sourceTree = SOURCE_ROOT; };
 		845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQRetweetedCell.xib; path = SinaWeibo/Classes/ViewModel/DQRetweetedCell.xib; sourceTree = SOURCE_ROOT; };
 		845CFBE41D9C349800C56951 /* DQRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQRefreshControl.swift; path = SinaWeibo/Classes/ViewModel/DQRefreshControl.swift; sourceTree = SOURCE_ROOT; };
+		84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQComposeView.swift; sourceTree = "<group>"; };
 		84C5FF611D93EE730062EEA3 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5FF641D93EE730062EEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,32 @@
 				843025AC1D983056006A9C9B /* DQWelcomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84B940B81DA6B7340036BDA3 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				84B940B91DA6B7470036BDA3 /* View */,
+				84B940BA1DA6B74D0036BDA3 /* ViewController */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
+		84B940B91DA6B7470036BDA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */,
+			);
+			name = View;
+			path = Compose/View;
+			sourceTree = "<group>";
+		};
+		84B940BA1DA6B74D0036BDA3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewController;
+			path = Compose/ViewController;
 			sourceTree = "<group>";
 		};
 		84C5FF581D93EE730062EEA3 = {
@@ -208,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				84C5FF811D93F6150062EEA3 /* Main */,
+				84B940B81DA6B7340036BDA3 /* Compose */,
 				8430257F1D97F12F006A9C9B /* Oauth */,
 				84C5FF7E1D93F6150062EEA3 /* Home */,
 				84C5FF841D93F6150062EEA3 /* Message */,
@@ -528,6 +557,7 @@
 				84F5DCD11D95548C00C95B57 /* UIButton+Extension.swift in Sources */,
 				845CFBE11D9AE0E800C56951 /* DQPictureView.swift in Sources */,
 				84F5DCCB1D954EC200C95B57 /* DQBaseTableViewController.swift in Sources */,
+				84B940BC1DA6B7A20036BDA3 /* DQComposeView.swift in Sources */,
 				843025831D97F219006A9C9B /* DQOauthViewController.swift in Sources */,
 				843025B11D9A3AF4006A9C9B /* DQUser.swift in Sources */,
 				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,

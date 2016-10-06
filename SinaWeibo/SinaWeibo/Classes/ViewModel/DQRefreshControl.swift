@@ -100,9 +100,14 @@ class DQRefreshControl: UIControl {
     
     
     private func setupUI() {
+        addSubview(backgroundImage)
         addSubview(tipLabel)
         addSubview(indicator)
         addSubview(arrowIcon)
+        
+        backgroundImage.snp.makeConstraints { (make) in
+            make.leading.trailing.bottom.equalTo(self)
+        }
         
         tipLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self).offset(10)
@@ -124,6 +129,8 @@ class DQRefreshControl: UIControl {
     private lazy var arrowIcon: UIImageView = UIImageView(image:#imageLiteral(resourceName: "tableview_pull_refresh"))
     private lazy var tipLabel: UILabel = UILabel(title: "下拉刷新", textColor: UIColor.gray, textFontSize: 14)
     private lazy var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    private lazy var backgroundImage: UIImageView = UIImageView(image: #imageLiteral(resourceName: "refreshbg"))
     
     deinit {
         self.scrollView?.removeObserver(self, forKeyPath: "contentOffset")
