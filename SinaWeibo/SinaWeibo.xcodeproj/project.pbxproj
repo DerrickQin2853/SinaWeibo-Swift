@@ -23,6 +23,10 @@
 		845CFBE31D9BDF8800C56951 /* DQRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */; };
 		845CFBE51D9C349800C56951 /* DQRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE41D9C349800C56951 /* DQRefreshControl.swift */; };
 		84B940BC1DA6B7A20036BDA3 /* DQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */; };
+		84B940C01DA6B8C00036BDA3 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B940BF1DA6B8C00036BDA3 /* UIImage+ImageEffects.m */; };
+		84B940C21DA6B9CC0036BDA3 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B940C11DA6B9CC0036BDA3 /* UIImage+Extension.swift */; };
+		84B940C41DA6C0190036BDA3 /* DQComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B940C31DA6C0190036BDA3 /* DQComposeButton.swift */; };
+		84B940C61DA6C3F10036BDA3 /* ComposeViewButtons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B940C51DA6C3F10036BDA3 /* ComposeViewButtons.plist */; };
 		84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF641D93EE730062EEA3 /* AppDelegate.swift */; };
 		84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */; };
 		84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FF6D1D93EE730062EEA3 /* LaunchScreen.storyboard */; };
@@ -65,6 +69,12 @@
 		845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQRetweetedCell.xib; path = SinaWeibo/Classes/ViewModel/DQRetweetedCell.xib; sourceTree = SOURCE_ROOT; };
 		845CFBE41D9C349800C56951 /* DQRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQRefreshControl.swift; path = SinaWeibo/Classes/ViewModel/DQRefreshControl.swift; sourceTree = SOURCE_ROOT; };
 		84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQComposeView.swift; sourceTree = "<group>"; };
+		84B940BD1DA6B8BF0036BDA3 /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SinaWeibo-Bridging-Header.h"; path = "../Tool/Extension/SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		84B940BE1DA6B8C00036BDA3 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		84B940BF1DA6B8C00036BDA3 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		84B940C11DA6B9CC0036BDA3 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		84B940C31DA6C0190036BDA3 /* DQComposeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQComposeButton.swift; sourceTree = "<group>"; };
+		84B940C51DA6C3F10036BDA3 /* ComposeViewButtons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ComposeViewButtons.plist; path = SinaWeibo/Classes/View/Compose/View/ComposeViewButtons.plist; sourceTree = SOURCE_ROOT; };
 		84C5FF611D93EE730062EEA3 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5FF641D93EE730062EEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5FF6B1D93EE730062EEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				84B940BB1DA6B7A20036BDA3 /* DQComposeView.swift */,
+				84B940C31DA6C0190036BDA3 /* DQComposeButton.swift */,
 			);
 			name = View;
 			path = Compose/View;
@@ -210,6 +221,7 @@
 				843025AE1D9A3ABC006A9C9B /* DQStatuses.swift */,
 				843025B01D9A3AF4006A9C9B /* DQUser.swift */,
 				843025B21D9A4310006A9C9B /* DQStatusPictureInfo.swift */,
+				84B940C51DA6C3F10036BDA3 /* ComposeViewButtons.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +229,7 @@
 		84C5FF781D93F6150062EEA3 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				84B940BD1DA6B8BF0036BDA3 /* SinaWeibo-Bridging-Header.h */,
 				84C5FF9C1D9410830062EEA3 /* DQTempViewController.swift */,
 				843025841D97F3DD006A9C9B /* Common.swift */,
 			);
@@ -390,10 +403,13 @@
 		84C5FF971D93F8630062EEA3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				84B940BE1DA6B8C00036BDA3 /* UIImage+ImageEffects.h */,
+				84B940BF1DA6B8C00036BDA3 /* UIImage+ImageEffects.m */,
 				84C5FF9A1D940D580062EEA3 /* UIBarButtonItem+Extension.swift */,
 				84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */,
 				84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */,
 				84F5DCD01D95548C00C95B57 /* UIButton+Extension.swift */,
+				84B940C11DA6B9CC0036BDA3 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -453,6 +469,7 @@
 					84C5FF601D93EE730062EEA3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5LGER48KH8;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -485,6 +502,7 @@
 				845CFBE31D9BDF8800C56951 /* DQRetweetedCell.xib in Resources */,
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
+				84B940C61DA6C3F10036BDA3 /* ComposeViewButtons.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B940C01DA6B8C00036BDA3 /* UIImage+ImageEffects.m in Sources */,
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
 				84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */,
 				843025B51D9A4A7F006A9C9B /* DQHomeViewModel.swift in Sources */,
@@ -551,6 +570,7 @@
 				843025AD1D983056006A9C9B /* DQWelcomeViewController.swift in Sources */,
 				84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */,
 				84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */,
+				84B940C21DA6B9CC0036BDA3 /* UIImage+Extension.swift in Sources */,
 				843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */,
 				843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */,
 				84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */,
@@ -560,6 +580,7 @@
 				84B940BC1DA6B7A20036BDA3 /* DQComposeView.swift in Sources */,
 				843025831D97F219006A9C9B /* DQOauthViewController.swift in Sources */,
 				843025B11D9A3AF4006A9C9B /* DQUser.swift in Sources */,
+				84B940C41DA6C0190036BDA3 /* DQComposeButton.swift in Sources */,
 				84C5FF991D94028B0062EEA3 /* DQBaseTabBar.swift in Sources */,
 				84C5FF901D93F72B0062EEA3 /* DQDiscoverViewController.swift in Sources */,
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
@@ -692,11 +713,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DerrickQin.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinaWeibo/Classes/Tool/Extension/SinaWeibo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -707,11 +731,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DerrickQin.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinaWeibo/Classes/Tool/Extension/SinaWeibo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

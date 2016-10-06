@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_idea</string>
+		<key>name</key>
+		<string>文字</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_photo</string>
+		<key>name</key>
+		<string>照片/视频</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_review</string>
+		<key>name</key>
+		<string>头条文章</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_lbs</string>
+		<key>name</key>
+		<string>签到</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_shooting</string>
+		<key>name</key>
+		<string>直播</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>tabbar_compose_more</string>
+		<key>name</key>
+		<string>更多</string>
+		<key>controller</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

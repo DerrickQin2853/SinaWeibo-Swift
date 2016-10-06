@@ -14,13 +14,13 @@ class DQTabBarController: UITabBarController {
         super.viewDidLoad()
         //设置自定义tabbar
         let baseTabBar = DQBaseTabBar()
+        
+        baseTabBar.composeButtonClosure = { [weak self] in
+            let composeView = DQComposeView()
+            composeView.show(targetVC: self)
+        }
         //使用KVC
         setValue(baseTabBar, forKey: "tabBar")
-        
-        baseTabBar.composeButtonClosure = {
-            print("composeButton Click!")
-        }
-        
         //添加子控制器
         addChildViewControllers()
     }
