@@ -12,7 +12,13 @@ class DQStatusPictureInfo: NSObject {
     
     var thumbnail_pic: String? {
         didSet{
-         thumbnail_pic = thumbnail_pic?.replacingOccurrences(of: "thumbnail", with: "bmiddle")
+         bmiddle_pic = thumbnail_pic?.replacingOccurrences(of: "thumbnail", with: "bmiddle")
+        wap360_pic = thumbnail_pic?.replacingOccurrences(of: "thumbnail", with: "wap360")
         }
     }
+    
+    var bmiddle_pic: String?
+    
+    var wap360_pic: String?
+    
 }

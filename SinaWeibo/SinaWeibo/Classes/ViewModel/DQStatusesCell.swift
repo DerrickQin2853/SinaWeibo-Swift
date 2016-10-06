@@ -44,18 +44,18 @@ class DQStatusesCell: UITableViewCell {
             userVipImageView.image = statusViewModel?.avatarTypeImage
             membershipLevelImageView.image = statusViewModel?.membershipImage
             userNameLabel.text = statusViewModel?.status?.user?.name
-            sinceTimeLabel.text = statusViewModel?.status?.created_at
-            sourceLabel.text = statusViewModel?.status?.source
+            sinceTimeLabel.text = statusViewModel?.sinceTimeText
+            sourceLabel.text = statusViewModel?.sourceText
             contentLabel.text = statusViewModel?.status?.text
             
             let picCount = statusViewModel?.pictureInfos?.count ?? 0
-            let picViewSize = setPictureViewSize(pictureCount: picCount)
-            pictureViewWidthCons.constant = picViewSize.width
-            pictureViewHeightCons.constant = picViewSize.height
+            let value = setPictureViewSize(pictureCount: picCount)
+            pictureViewWidthCons.constant = value.picViewSize.width
+            pictureViewHeightCons.constant = value.picViewSize.height
             pictureViewTopCons.constant = picCount == 0 ? 0 : commonMargin
             sepratorBarHeightCons.constant = (statusViewModel?.isFisrt)! ? 0 : 10
             pictureView.pictureInfos = statusViewModel?.pictureInfos
-            
+            pictureViewFlowLayout.itemSize = value.itemSize
             repostButton.setTitle(statusViewModel?.reposts_text, for: .normal)
             commentButton.setTitle(statusViewModel?.comments_text, for: .normal)
             attitudesButton.setTitle(statusViewModel?.attitudes_text, for: .normal)
@@ -72,10 +72,12 @@ class DQStatusesCell: UITableViewCell {
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - commonMargin * 2
         retweetedContentLabel?.preferredMaxLayoutWidth = ScreenWidth - commonMargin * 2
         //设置flowlayout
-        pictureViewFlowLayout.itemSize = CGSize(width: pictureWH, height: pictureWH)
+        
+//        pictureViewFlowLayout.itemSize = CGSize(width: pictureWH, height: pictureWH)
         
         pictureViewFlowLayout.minimumInteritemSpacing = pictureCellMargin
         pictureViewFlowLayout.minimumLineSpacing = pictureCellMargin
+        pictureViewFlowLayout.sectionInset = UIEdgeInsets.zero
     }
     
     func getRowHeight(viewModel: DQStatusesViewModel) -> CGFloat {
@@ -86,20 +88,24 @@ class DQStatusesCell: UITableViewCell {
     
     
     //根据图片张数设置pictureView的大小
-    private func setPictureViewSize(pictureCount: Int) -> CGSize {
+    private func setPictureViewSize(pictureCount: Int) -> (picViewSize: CGSize, itemSize: CGSize) {
         if pictureCount == 0 {
-            return CGSize.zero
+            return (CGSize.zero, CGSize.zero)
+        }
+        else if pictureCount == 1 {
+            let urlString = statusViewModel?.pictureInfos?.first?.wap360_pic ?? ""
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
+            let itemSize = image!.size
+            return (itemSize,itemSize)
         }
         else if pictureCount == 4 {
             let WH = pictureWH * 2 + pictureCellMargin
-            return CGSize(width: WH, height: WH)
+            return (CGSize(width: WH, height: WH), CGSize(width: pictureWH, height: pictureWH))
         }
         else {
-            //#Warning 加不加括号?
             let rowCount = CGFloat((pictureCount - 1) / 3 + 1)
-            let h = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
-            
-            return CGSize(width: pictureViewMaxWidth, height: h)
+            let height = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
+            return (CGSize(width: pictureViewMaxWidth, height: height), CGSize(width: pictureWH, height: pictureWH))
             
         }
     }

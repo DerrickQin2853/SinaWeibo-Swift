@@ -8,12 +8,6 @@
 
 import UIKit
 
-//enum RefreshStatus: Int {
-//    case Normal = 0
-//    case Pulling
-//    case Refreshing
-//}
-
 enum RefreshStatue: Int {
     case Normal = 0     //默认状态
     case Pulling        //准备刷新状态
@@ -23,40 +17,48 @@ enum RefreshStatue: Int {
 private let refreshControlHeight: CGFloat = 45
 
 class DQRefreshControl: UIControl {
-
-//    var refreshStatus: RefreshStatus = .Pulling {
-//        didSet {
-//            switch refreshStatus {
-//            case .Pulling:
-//                print("下拉起飞")
-//                print("~~~~~~~~~~~~~~~~~~~~~~")
-//            case .ReadayToRefresh:
-//                print("准备起飞")
-//                print("~~~~~~~~~~~~~~~~~~~~~~")
-//            case .ReadayToRefresh:
-//                print("正在飞...")
-//                print("~~~~~~~~~~~~~~~~~~~~~~")
-//            }
-//        }
-//    }
     
     var refreshStatus: RefreshStatue = .Normal {
         didSet {
             switch refreshStatus {
             case .Normal:
-                print("下拉起飞")
-                print("~~~~~~~~~~~~~~~~~~~~~~")
+                arrowIcon.isHidden = false
+                tipLabel.text = "下拉刷新"
+                indicator.stopAnimating()
+                
+                if oldValue == .Refreshing {
+                    UIView.animate(withDuration: 0.5, animations: { 
+                        self.scrollView!.contentInset.top = self.scrollView!.contentInset.top - refreshControlHeight
+                    })
+                }
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.arrowIcon.transform = CGAffineTransform.identity
+                })
+                
             case .Pulling:
-                print("准备起飞")
-                print("~~~~~~~~~~~~~~~~~~~~~~")
+                arrowIcon.isHidden = false
+                tipLabel.text = "松手刷新"
+                indicator.stopAnimating()
+                
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.arrowIcon.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI))
+                })
             case .Refreshing:
-                print("正在飞...")
-                print("~~~~~~~~~~~~~~~~~~~~~~")
+                arrowIcon.isHidden = true
+                tipLabel.text = "正在刷新"
+                indicator.startAnimating()
+                scrollView!.contentInset.top = scrollView!.contentInset.top + refreshControlHeight
+                
+                self.sendActions(for: .valueChanged)
             }
         }
     }
 
-    
+    func stopAnimating() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) { 
+            self.refreshStatus = .Normal
+        }
+    }
     
     override init(frame: CGRect){
         let rect = CGRect(x: 0, y: -refreshControlHeight, width: ScreenWidth, height: refreshControlHeight)
@@ -121,7 +123,7 @@ class DQRefreshControl: UIControl {
     
     private lazy var arrowIcon: UIImageView = UIImageView(image:#imageLiteral(resourceName: "tableview_pull_refresh"))
     private lazy var tipLabel: UILabel = UILabel(title: "下拉刷新", textColor: UIColor.gray, textFontSize: 14)
-    private lazy var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+    private lazy var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     deinit {
         self.scrollView?.removeObserver(self, forKeyPath: "contentOffset")

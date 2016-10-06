@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DQHomeViewModel: NSObject {
     //懒加载
@@ -60,7 +61,26 @@ class DQHomeViewModel: NSObject {
             }
             
             
-            finish(true,tempArray.count)
+//            finish(true,tempArray.count)
+            self.loadSinglePicture(dataArray: tempArray,loadSingleFinished: finish)
         }
     }
+    
+    private func loadSinglePicture(dataArray:[DQStatusesViewModel], loadSingleFinished: @escaping ((Bool,Int) -> ())) {
+        let group = DispatchGroup.init()
+        for viewModel in dataArray {
+            if viewModel.pictureInfos?.count == 1 {
+                let url = URL(string: viewModel.pictureInfos?.first?.wap360_pic ?? "")
+                group.enter()
+                SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+                    group.leave()
+                })
+            }
+            
+        }
+        group.notify(queue: DispatchQueue.main) { 
+            loadSingleFinished(true,dataArray.count)
+        }
+    }
+    
 }

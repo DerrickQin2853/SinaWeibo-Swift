@@ -16,7 +16,7 @@ class DQHomeViewController: DQBaseTableViewController {
 
     lazy var homeViewModel: DQHomeViewModel = DQHomeViewModel()
     
-    
+    let homeRefreshControl = DQRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +49,16 @@ class DQHomeViewController: DQBaseTableViewController {
                 return
             }
             
-//            //停止动画
-//            self.refreshControl?.endRefreshing()
+            self.homeRefreshControl.stopAnimating()
+            
+            if !self.indicatorView.isAnimating {
+                self.startTipLabelAnimation(count: count)
+            }
             
             //indicator停止转动
             self.indicatorView.stopAnimating()
             
-            self.startTipLabelAnimation(count: count)
 
-            
             //返回成功 刷新
             self.tableView.reloadData()
             
@@ -72,8 +73,6 @@ class DQHomeViewController: DQBaseTableViewController {
         tableView.register(nib, forCellReuseIdentifier: DQStatusesCellID)
         let retweetednib = UINib(nibName: "DQRetweetedCell", bundle: nil)
         tableView.register(retweetednib, forCellReuseIdentifier: DQRetweetedCellID)
-        //行高
-//        tableView.rowHeight = 600
         //分割线
         tableView.separatorStyle = .none
         //隐藏滑动条
@@ -81,8 +80,6 @@ class DQHomeViewController: DQBaseTableViewController {
         
         tableView.tableFooterView = indicatorView
         
-        let homeRefreshControl = DQRefreshControl()
-        //?????
         homeRefreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         view.addSubview(homeRefreshControl)
 //                //添加系统的刷新控件
@@ -95,7 +92,6 @@ class DQHomeViewController: DQBaseTableViewController {
         navigationController?.view.addSubview(tipLabel)
         navigationController?.view.insertSubview(tipLabel, belowSubview: self.navigationController!.navigationBar)
         
-
     }
     
     private func startTipLabelAnimation(count: Int) {
@@ -108,11 +104,11 @@ class DQHomeViewController: DQBaseTableViewController {
         self.tipLabel.isHidden = false
         //在动画之前先记录之前的y值
         let lastY = self.tipLabel.frame.origin.y
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.6, animations: {
             self.tipLabel.frame.origin.y = navBarHeight
         }) { (_) in
             //添加一个返回原位置的动画 需要延迟
-            UIView.animate(withDuration: 1, delay: 1, options: [], animations: {
+            UIView.animate(withDuration: 0.6, delay: 0.8, options: [], animations: {
                 self.tipLabel.frame.origin.y = lastY
                 }, completion: { (_) in
                     self.tipLabel.isHidden = true

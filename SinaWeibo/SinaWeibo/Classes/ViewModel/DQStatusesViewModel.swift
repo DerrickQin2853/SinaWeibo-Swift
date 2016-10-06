@@ -17,7 +17,7 @@ class DQStatusesViewModel: NSObject {
             dealAvatarTypeImage()
             dealMembershipImage()
             dealBottomBarButton()
-            dealSourceText()
+            sourceText = dealSourceText()
         }
     }
     
@@ -38,8 +38,58 @@ class DQStatusesViewModel: NSObject {
     }
     
     var sourceText: String?
-    
-    var sinceTimeText: String?
+    /*
+     今年:
+       今天:
+       - 60s之内   --> 刚刚
+       - 一小时之内  --> xx分钟前
+       - 其他: 多少小时前
+       昨天:
+        - 昨天 HH:mm
+        其他:
+        - MM-dd
+     非当年:
+     - yyyy-MM-dd
+     */
+    var sinceTimeText: String? {
+        let dateString = status?.created_at ?? ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
+        dateFormatter.locale = Locale(identifier: "en")
+        let createDate = dateFormatter.date(from: dateString)
+        guard let tempDate = createDate else{
+            return ""
+        }
+        
+        let calendar = Calendar.current
+        
+        if isThisYear(targetDate: tempDate) {
+            if calendar.isDateInToday(tempDate) {
+                let date = Date()
+                let detla =  date.timeIntervalSince(tempDate)
+                if detla < 60 {
+                    return "刚刚"
+                } else if detla < 3600 {
+                    return "\(Int(detla) / 60)分钟前"
+                } else {
+                    return "\(Int(detla) / 3600)小时前"
+                }
+            }
+            else if calendar.isDateInYesterday(tempDate){
+                dateFormatter.dateFormat = "昨天 HH:mm"
+                return dateFormatter.string(from: tempDate)
+            }
+            else{
+                dateFormatter.dateFormat = "MM-dd"
+                return dateFormatter.string(from: tempDate)
+            }
+        }
+        else{
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.string(from: tempDate)
+        }
+        
+    }
     
     var isFisrt: Bool = false
     
@@ -77,25 +127,50 @@ class DQStatusesViewModel: NSObject {
     }
     
     private func getBottomBarButtonText(count: Int, defaultText: String) -> String {
-//        if count == 0 {
-//            return defaultText
-//        }
         if count > 10000 {
             return "\(Double(count / 1000) / 10)万"
         }
-//        return count.description
         return "\(count)"
     }
-    
+    //判断是不是第一条微博，是的话消除灰色分隔条
     func dealIsFirst(index: Int) {
         if index == 0 {
             isFisrt = true
         }
     }
     
-    private func dealSourceText() {
-//        let startRange = status?.source?.range(of: "rel=\"nofollow\">")
-//        let endRange = status?.source?.range(of: "</a>")
+    private func isThisYear(targetDate: Date) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
         
+        dateFormatter.locale = Locale(identifier: "en")
+        
+        let currentTime = Date()
+        
+        dateFormatter.dateFormat = "yyyy"
+        
+        let targetYear = dateFormatter.string(from: targetDate)
+        let currentYear = dateFormatter.string(from: currentTime)
+
+        return currentYear == targetYear
+    }
+    
+    //处理来源
+    private func dealSourceText() -> String {
+    // <a href=\"http://app.weibo.com/t/feed/3jskmg\" rel=\"nofollow\">iPhone 6s</a>
+        let originString = status?.source ?? ""
+        
+        let startTag = "\">"
+        let endTag = "</a>"
+        
+        guard let startRangeIndex = originString.range(of: startTag),
+           let endRangeIndex = originString.range(of: endTag) else{
+                return "来自未知设备"
+        }
+        
+        let startIndex = startRangeIndex.upperBound
+        let endIndex = endRangeIndex.lowerBound
+        let rangeIndex = startIndex..<endIndex
+        return "来自" + originString.substring(with: rangeIndex)
     }
 }

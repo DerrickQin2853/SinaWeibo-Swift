@@ -44,8 +44,10 @@ class DQPictureCell: UICollectionViewCell {
     
     var pictureInfo: DQStatusPictureInfo? {
         didSet{
-            let url = URL(string: pictureInfo?.thumbnail_pic ?? "")
+            let url = URL(string: pictureInfo?.wap360_pic ?? "")
             cellImageView.sd_setImage(with: url)
+            //设置gif标
+            gificon.isHidden = !url!.absoluteString.hasSuffix(".gif")
         }
     }
     
@@ -55,6 +57,11 @@ class DQPictureCell: UICollectionViewCell {
         
         cellImageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView.snp.edges)
+        
+        self.contentView.addSubview(gificon)
+        gificon.snp.makeConstraints({ (make) in
+            make.trailing.bottom.equalTo(self.contentView)
+        })
         }
     }
     
@@ -69,4 +76,5 @@ class DQPictureCell: UICollectionViewCell {
         return tempImageView
     }()
     
+    private lazy var gificon: UIImageView = UIImageView(image: #imageLiteral(resourceName: "timeline_image_gif"))
 }
