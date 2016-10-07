@@ -7,23 +7,74 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DQComposeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        registerNotification()
         setupNavigationBar()
         setTextView()
+        setToolbar()
+    }
+    
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notificate:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 
+    @objc private func keyboardWillChange(notificate: Notification) {
+        let keyboardEndFrame = (notificate.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        let newOffsetY = -ScreenHeight + keyboardEndFrame.origin.y
+        
+        toolBar.snp.updateConstraints { (make) in
+            make.bottom.equalTo(newOffsetY)
+        }
+        
+        UIView.animate(withDuration: 0.25) { 
+            self.view.layoutIfNeeded()
+        }
+    }
     
     @objc internal func backItemClick() {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @objc internal func sendBtnDidClick() {
-        
+        composeViewModel.postStatus(statusText: textView.text ?? "") { (success) in
+            if !success {
+                SVProgressHUD.showError(withStatus: "发布失败，请检查网络设置")
+            }
+            SVProgressHUD.showSuccess(withStatus: "发布成功")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                self.dismiss(animated: true, completion: nil)
+                SVProgressHUD.dismiss(withDelay: 0.5)
+            })
+            
+        }
     }
+    
+    @objc internal func toolBarButtonClick(btn: UIButton) {
+        switch btn.tag {
+        case 0:
+            print("发布图片")
+        case 1:
+            print("@某人")
+        case 2:
+            print("发布话题")
+        case 3:
+            print("发送表情")
+        case 4:
+            print("更多")
+        default:
+            print("瞎点")
+        }
+    }
+    
+    private lazy var composeViewModel: DQComposeViewModel = DQComposeViewModel()
+    
     
     internal lazy var sendBtn: UIBarButtonItem = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 35))
@@ -54,7 +105,35 @@ class DQComposeController: UIViewController {
 
     //占位文本
     internal lazy var placeHolderLabel: UILabel = UILabel(title: "分享新鲜事...", textColor: UIColor.lightGray, textFontSize: 16)
+    //底部工具条
+    internal lazy var toolBar: UIToolbar = {
+       let tempToolBar = UIToolbar()
+       var items = [UIBarButtonItem]()
+        let imageNames = ["compose_toolbar_picture",
+                         "compose_mentionbutton_background",
+                         "compose_trendbutton_background",
+                         "compose_emoticonbutton_background",
+                         "compose_add_background"]
+        for value in imageNames.enumerated() {
+            let btn = UIButton()
+            btn.setImage(UIImage(named: value.element), for: .normal)
+            btn.setImage(UIImage(named: value.element + "_highlighted"), for: .highlighted)
+            btn.tag = value.offset
+            btn.addTarget(self, action: #selector(toolBarButtonClick(btn:)), for: .touchUpInside)
+            btn.sizeToFit()
+            let barItem = UIBarButtonItem(customView: btn)
+            items.append(barItem)
+            let spaceFlex = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+            items.append(spaceFlex)
+        }
+        items.removeLast()
+        tempToolBar.setItems(items, animated: false)
+        return tempToolBar
+    }()
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
 }
 
@@ -107,6 +186,15 @@ extension DQComposeController {
         placeHolderLabel.snp.makeConstraints { (make) in
             make.top.equalTo(textView).offset(8)
             make.left.equalTo(textView).offset(5)
+        }
+    }
+    
+    internal func setToolbar() {
+        self.view.addSubview(toolBar)
+        
+        toolBar.snp.makeConstraints { (make) in
+            make.leading.right.bottom.equalTo(self.view)
+            make.height.equalTo(36)
         }
     }
 

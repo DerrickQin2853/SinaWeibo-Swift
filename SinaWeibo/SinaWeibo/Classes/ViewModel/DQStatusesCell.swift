@@ -59,6 +59,8 @@ class DQStatusesCell: UITableViewCell {
             repostButton.setTitle(statusViewModel?.reposts_text, for: .normal)
             commentButton.setTitle(statusViewModel?.comments_text, for: .normal)
             attitudesButton.setTitle(statusViewModel?.attitudes_text, for: .normal)
+            
+            
             //转发文字
             retweetedContentLabel?.text = statusViewModel?.status?.retweeted_status?.text
         }
@@ -95,8 +97,11 @@ class DQStatusesCell: UITableViewCell {
         else if pictureCount == 1 {
             let urlString = statusViewModel?.pictureInfos?.first?.wap360_pic ?? ""
             let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
-            let itemSize = image!.size
-            return (itemSize,itemSize)
+            var imageSize = CGSize(width: 120, height: 150)
+            if image != nil {
+                imageSize = image!.size
+            }
+            return (imageSize,imageSize)
         }
         else if pictureCount == 4 {
             let WH = pictureWH * 2 + pictureCellMargin
@@ -106,7 +111,6 @@ class DQStatusesCell: UITableViewCell {
             let rowCount = CGFloat((pictureCount - 1) / 3 + 1)
             let height = rowCount * pictureWH + (rowCount - 1) * pictureCellMargin
             return (CGSize(width: pictureViewMaxWidth, height: height), CGSize(width: pictureWH, height: pictureWH))
-            
         }
     }
 }

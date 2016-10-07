@@ -19,6 +19,7 @@
 		843025B71D9A4A94006A9C9B /* DQStatusesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */; };
 		843025BA1D9A52BB006A9C9B /* DQStatusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */; };
 		843025BB1D9A52BB006A9C9B /* DQStatusesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */; };
+		843EAFC01DA7D15E00B4C2D2 /* DQComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAFBF1DA7D15E00B4C2D2 /* DQComposeViewModel.swift */; };
 		845CFBE11D9AE0E800C56951 /* DQPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE01D9AE0E800C56951 /* DQPictureView.swift */; };
 		845CFBE31D9BDF8800C56951 /* DQRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */; };
 		845CFBE51D9C349800C56951 /* DQRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CFBE41D9C349800C56951 /* DQRefreshControl.swift */; };
@@ -66,6 +67,7 @@
 		843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQStatusesViewModel.swift; sourceTree = "<group>"; };
 		843025B81D9A52BB006A9C9B /* DQStatusesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQStatusesCell.swift; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.swift; sourceTree = SOURCE_ROOT; };
 		843025B91D9A52BB006A9C9B /* DQStatusesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQStatusesCell.xib; path = SinaWeibo/Classes/ViewModel/DQStatusesCell.xib; sourceTree = SOURCE_ROOT; };
+		843EAFBF1DA7D15E00B4C2D2 /* DQComposeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQComposeViewModel.swift; sourceTree = "<group>"; };
 		845CFBE01D9AE0E800C56951 /* DQPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQPictureView.swift; path = SinaWeibo/Classes/ViewModel/DQPictureView.swift; sourceTree = SOURCE_ROOT; };
 		845CFBE21D9BDF8800C56951 /* DQRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DQRetweetedCell.xib; path = SinaWeibo/Classes/ViewModel/DQRetweetedCell.xib; sourceTree = SOURCE_ROOT; };
 		845CFBE41D9C349800C56951 /* DQRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQRefreshControl.swift; path = SinaWeibo/Classes/ViewModel/DQRefreshControl.swift; sourceTree = SOURCE_ROOT; };
@@ -399,6 +401,7 @@
 				843025A81D9803DF006A9C9B /* DQUserAccountViewModel.swift */,
 				843025B41D9A4A7F006A9C9B /* DQHomeViewModel.swift */,
 				843025B61D9A4A94006A9C9B /* DQStatusesViewModel.swift */,
+				843EAFBF1DA7D15E00B4C2D2 /* DQComposeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			files = (
 				84B940C01DA6B8C00036BDA3 /* UIImage+ImageEffects.m in Sources */,
 				84C5FF961D93F77F0062EEA3 /* DQTabBarController.swift in Sources */,
+				843EAFC01DA7D15E00B4C2D2 /* DQComposeViewModel.swift in Sources */,
 				84C5FF9D1D9410830062EEA3 /* DQTempViewController.swift in Sources */,
 				843025B51D9A4A7F006A9C9B /* DQHomeViewModel.swift in Sources */,
 				843025B71D9A4A94006A9C9B /* DQStatusesViewModel.swift in Sources */,
