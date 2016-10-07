@@ -78,7 +78,27 @@ class DQComposeView: UIView {
     
     
     @objc private func composeTypeBtnDidClick(btn: DQComposeButton) {
-        
+        UIView.animate(withDuration: 0.5, animations: {
+            for composeBtn in self.buttonArray{
+                composeBtn.alpha = 0.1
+                if composeBtn == btn {
+                    composeBtn.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+                }
+                else{
+                    composeBtn.transform = CGAffineTransform.init(scaleX: 0.01, y: 0.01)
+                }
+            }
+            }) { (_) in
+                let nameSpace = Bundle.main.infoDictionary!["CFBundleName"] as! String
+                let className = nameSpace + ".DQComposeController"
+                let classType = NSClassFromString(className) as! UIViewController.Type
+                let VC = classType.init()
+                let navigationVC = UINavigationController(rootViewController: VC)
+                self.targetVC?.present(navigationVC, animated: true, completion: { 
+                    self.removeFromSuperview()
+                })
+                
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
