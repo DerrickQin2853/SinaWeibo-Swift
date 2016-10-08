@@ -43,6 +43,10 @@ class DQEmoticonKeyboardView: UIView {
             let indexPath = IndexPath(item: 0, section: type.rawValue)
             self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
+        
+        let dataArray = DQEmoticonTools.sharedTools.loadEmoticon(infoName: "default")
+        print("============================================")
+        print(dataArray)
     }
     
     

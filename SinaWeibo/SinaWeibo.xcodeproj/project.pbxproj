@@ -49,6 +49,8 @@
 		84E2B5821DA8EE0400D05259 /* DQEmoticonKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */; };
 		84E2B5841DA8F14C00D05259 /* DQEmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */; };
 		84E2B5861DA8F89400D05259 /* DQEmoticonPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */; };
+		84E2B5881DA90B2A00D05259 /* DQEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5871DA90B2A00D05259 /* DQEmoticon.swift */; };
+		84E2B58B1DA90B8700D05259 /* DQEmoticonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B58A1DA90B8700D05259 /* DQEmoticonTools.swift */; };
 		84F5DCCB1D954EC200C95B57 /* DQBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCA1D954EC200C95B57 /* DQBaseTableViewController.swift */; };
 		84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */; };
 		84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */; };
@@ -106,6 +108,8 @@
 		84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonKeyboardView.swift; sourceTree = "<group>"; };
 		84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonToolBar.swift; sourceTree = "<group>"; };
 		84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonPageCell.swift; sourceTree = "<group>"; };
+		84E2B5871DA90B2A00D05259 /* DQEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DQEmoticon.swift; path = SinaWeibo/Classes/View/EmoticonKeyboard/View/DQEmoticon.swift; sourceTree = SOURCE_ROOT; };
+		84E2B58A1DA90B8700D05259 /* DQEmoticonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonTools.swift; sourceTree = "<group>"; };
 		84F5DCCA1D954EC200C95B57 /* DQBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseTableViewController.swift; sourceTree = "<group>"; };
 		84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQVisitorLoginView.swift; sourceTree = "<group>"; };
 		84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				843025B01D9A3AF4006A9C9B /* DQUser.swift */,
 				843025B21D9A4310006A9C9B /* DQStatusPictureInfo.swift */,
 				84B940C51DA6C3F10036BDA3 /* ComposeViewButtons.plist */,
+				84E2B5871DA90B2A00D05259 /* DQEmoticon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		84C5FF791D93F6150062EEA3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				84E2B5891DA90B6000D05259 /* EmoticonKeyboard */,
 				84F5DCD21D95658A00C95B57 /* NetworkTools */,
 				84C5FF971D93F8630062EEA3 /* Extension */,
 			);
@@ -452,6 +458,14 @@
 			path = EmoticonKeyboard/View;
 			sourceTree = "<group>";
 		};
+		84E2B5891DA90B6000D05259 /* EmoticonKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				84E2B58A1DA90B8700D05259 /* DQEmoticonTools.swift */,
+			);
+			path = EmoticonKeyboard;
+			sourceTree = "<group>";
+		};
 		84F5DCD21D95658A00C95B57 /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +626,7 @@
 				84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */,
 				84B940C21DA6B9CC0036BDA3 /* UIImage+Extension.swift in Sources */,
 				84E2B5861DA8F89400D05259 /* DQEmoticonPageCell.swift in Sources */,
+				84E2B58B1DA90B8700D05259 /* DQEmoticonTools.swift in Sources */,
 				843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */,
 				84E2B5841DA8F14C00D05259 /* DQEmoticonToolBar.swift in Sources */,
 				843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */,
@@ -629,6 +644,7 @@
 				84C5FF8C1D93F6C70062EEA3 /* DQHomeViewController.swift in Sources */,
 				843EAFC21DA899D600B4C2D2 /* DQPictureSelectViewController.swift in Sources */,
 				84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */,
+				84E2B5881DA90B2A00D05259 /* DQEmoticon.swift in Sources */,
 				843025AF1D9A3ABC006A9C9B /* DQStatuses.swift in Sources */,
 				84C5FF921D93F73D0062EEA3 /* DQProfileViewController.swift in Sources */,
 				84C5FF8E1D93F6DE0062EEA3 /* DQMessageViewController.swift in Sources */,
