@@ -59,6 +59,17 @@ class DQEmoticonToolBar: UIStackView {
     }
     
     
+    func setButtonSelected(indexPath: IndexPath) {
+        let btn = self.viewWithTag(indexPath.section) as! UIButton
+        
+        if btn.isSelected {
+            return
+        }
+        lastSelectedButton?.isSelected = false
+        lastSelectedButton = btn
+        btn.isSelected = true
+    }
+    
     @objc private func buttonClick(btn: UIButton) {
         if btn.isSelected {
             return

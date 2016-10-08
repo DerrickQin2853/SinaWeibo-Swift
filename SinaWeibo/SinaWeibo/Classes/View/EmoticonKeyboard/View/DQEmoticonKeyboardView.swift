@@ -40,7 +40,8 @@ class DQEmoticonKeyboardView: UIView {
         }
         //闭包实现
         toolBar.emoticonTypeSelectClosure = { type in
-            
+            let indexPath = IndexPath(item: 0, section: type.rawValue)
+            self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
     }
     
@@ -87,6 +88,13 @@ extension DQEmoticonKeyboardView: UICollectionViewDataSource, UICollectionViewDe
         cell.indexPath = indexPath
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetX = scrollView.contentOffset.x + 0.5 * ScreenWidth
+        let point = CGPoint(x: contentOffsetX, y: 10)
+        let indexPath = collectionView.indexPathForItem(at: point)
+        toolBar.setButtonSelected(indexPath: indexPath!)
     }
 }
 
