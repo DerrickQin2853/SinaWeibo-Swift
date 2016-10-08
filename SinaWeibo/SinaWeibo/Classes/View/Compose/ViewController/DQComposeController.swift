@@ -17,7 +17,22 @@ class DQComposeController: UIViewController {
         registerNotification()
         setupNavigationBar()
         setTextView()
+        setupPictureSelectView()
         setToolbar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if selectPictureController.images.count != 0 {
+            selectPictureController.view.isHidden = false
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if selectPictureController.images.count == 0 {
+        textView.becomeFirstResponder()
+        }
     }
     
     private func registerNotification() {
@@ -43,23 +58,42 @@ class DQComposeController: UIViewController {
     }
     
     @objc internal func sendBtnDidClick() {
-        composeViewModel.postStatus(statusText: textView.text ?? "") { (success) in
-            if !success {
-                SVProgressHUD.showError(withStatus: "发布失败，请检查网络设置")
+        if selectPictureController.images.count == 0 {
+            composeViewModel.postStatus(statusText: textView.text ?? "") { (success) in
+                if !success {
+                    SVProgressHUD.showError(withStatus: "发布失败，请检查网络设置")
+                    SVProgressHUD.dismiss(withDelay: 0.5)
+                }
+                SVProgressHUD.showSuccess(withStatus: "发布成功")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                    self.dismiss(animated: true, completion: nil)
+                    SVProgressHUD.dismiss(withDelay: 0.5)
+                })
+                
             }
-            SVProgressHUD.showSuccess(withStatus: "发布成功")
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
-                self.dismiss(animated: true, completion: nil)
-                SVProgressHUD.dismiss(withDelay: 0.5)
-            })
-            
+
         }
+        else{
+            composeViewModel.postStatusWithOnePicture(statusText: textView.text ?? "", image: selectPictureController.images.last!, finish: { (success) in
+                if !success {
+                    SVProgressHUD.showError(withStatus: "发布失败，请检查网络设置")
+                    SVProgressHUD.dismiss(withDelay: 0.5)
+                }
+                SVProgressHUD.showSuccess(withStatus: "发布成功")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                    self.dismiss(animated: true, completion: nil)
+                    SVProgressHUD.dismiss(withDelay: 0.5)
+                })
+            })
+        }
+        
     }
     
     @objc internal func toolBarButtonClick(btn: UIButton) {
         switch btn.tag {
         case 0:
             print("发布图片")
+            selectPictureController.addPicture()
         case 1:
             print("@某人")
         case 2:
@@ -75,6 +109,16 @@ class DQComposeController: UIViewController {
     
     private lazy var composeViewModel: DQComposeViewModel = DQComposeViewModel()
     
+    internal lazy var selectPictureController: DQPictureSelectViewController = {
+       let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = selectCellMargin
+        layout.minimumInteritemSpacing = selectCellMargin
+        layout.itemSize = CGSize(width: itemWH, height: itemWH)
+        layout.sectionInset = UIEdgeInsets(top: selectCellMargin, left: selectCellMargin, bottom: 0, right: selectCellMargin)
+        let vc = DQPictureSelectViewController(collectionViewLayout: layout)
+        vc.collectionView?.backgroundColor = UIColor.white
+        return vc
+    }()
     
     internal lazy var sendBtn: UIBarButtonItem = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 35))
@@ -150,6 +194,19 @@ extension DQComposeController: UITextViewDelegate {
 
 
 extension DQComposeController {
+    
+    internal func setupPictureSelectView() {
+        self.addChildViewController(selectPictureController)
+        self.view.addSubview(selectPictureController.view)
+        
+        selectPictureController.view.snp.makeConstraints { (make) in
+            make.bottom.trailing.leading.equalTo(self.view)
+            make.height.equalTo(ScreenHeight / 4 * 3)
+        }
+        
+        selectPictureController.view.isHidden = true
+    }
+    
     internal func setupNavigationBar() {
         let backItem = UIBarButtonItem(title: "关闭", imageName: nil, target: self, action: #selector(backItemClick))
         navigationItem.leftBarButtonItem = backItem

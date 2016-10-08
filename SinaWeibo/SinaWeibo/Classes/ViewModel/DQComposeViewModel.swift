@@ -9,7 +9,7 @@
 import UIKit
 
 class DQComposeViewModel: NSObject {
-
+    //发布文字微博
     func postStatus(statusText: String, finish:@escaping ((Bool) -> ())) {
         let urlString = "https://api.weibo.com/2/statuses/update.json"
         //在数组和字典中不能够直接添加隐式的可选类型
@@ -20,9 +20,24 @@ class DQComposeViewModel: NSObject {
                 finish(false)
                 return
             }
-            
             finish(true)
         }
-
     }
+    
+    //发布文字带图微博
+    func postStatusWithOnePicture(statusText: String, image: UIImage , finish:@escaping ((Bool) -> ())) {
+        let urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        let parameters = ["access_token" : DQUserAccountViewModel.sharedViewModel.userInfo?.access_token ?? "" ,
+                          "status" : statusText]
+        DQNetworkTools.sharedTools.post(urlString, parameters: parameters, constructingBodyWith: { (formData) in
+            let imageData = UIImagePNGRepresentation(image)
+            formData.appendPart(withFileData: imageData!, name: "pic", fileName: "Weibopic2016", mimeType: "application/octet-stream")
+            }, progress: nil, success: { (_, _) in
+                finish(true)
+            }) { (_, error) in
+                print(error)
+                finish(false)
+        }
+    }
+    
 }

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>My SinaWeibo 获得照片的权限</string>
 	<key>CFBundleDisplayName</key>
 	<string>My SinaWeibo</string>
 	<key>CFBundleDevelopmentRegion</key>

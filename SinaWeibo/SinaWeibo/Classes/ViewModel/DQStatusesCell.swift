@@ -99,7 +99,8 @@ class DQStatusesCell: UITableViewCell {
             let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
             var imageSize = CGSize(width: 120, height: 150)
             if image != nil {
-                imageSize = image!.size
+                let newImage = image!.scaleImage(width: 180)
+                imageSize = newImage.size
             }
             return (imageSize,imageSize)
         }
