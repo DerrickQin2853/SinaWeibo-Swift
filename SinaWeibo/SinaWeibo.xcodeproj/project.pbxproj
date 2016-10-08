@@ -45,6 +45,10 @@
 		84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FF9E1D9412180062EEA3 /* DQSearchBarButton.swift */; };
 		84C5FFA11D9412310062EEA3 /* DQSearchBarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C5FFA01D9412310062EEA3 /* DQSearchBarButton.xib */; };
 		84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */; };
+		84E2B5801DA8EBF400D05259 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84E2B57F1DA8EBF400D05259 /* Emoticons.bundle */; };
+		84E2B5821DA8EE0400D05259 /* DQEmoticonKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */; };
+		84E2B5841DA8F14C00D05259 /* DQEmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */; };
+		84E2B5861DA8F89400D05259 /* DQEmoticonPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */; };
 		84F5DCCB1D954EC200C95B57 /* DQBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCA1D954EC200C95B57 /* DQBaseTableViewController.swift */; };
 		84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */; };
 		84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */; };
@@ -98,6 +102,10 @@
 		84C5FF9E1D9412180062EEA3 /* DQSearchBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQSearchBarButton.swift; sourceTree = "<group>"; };
 		84C5FFA01D9412310062EEA3 /* DQSearchBarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQSearchBarButton.xib; sourceTree = "<group>"; };
 		84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		84E2B57F1DA8EBF400D05259 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonKeyboardView.swift; sourceTree = "<group>"; };
+		84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonToolBar.swift; sourceTree = "<group>"; };
+		84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonPageCell.swift; sourceTree = "<group>"; };
 		84F5DCCA1D954EC200C95B57 /* DQBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQBaseTableViewController.swift; sourceTree = "<group>"; };
 		84F5DCCC1D954F2F00C95B57 /* DQVisitorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQVisitorLoginView.swift; sourceTree = "<group>"; };
 		84F5DCCE1D9552C300C95B57 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				84C5FF811D93F6150062EEA3 /* Main */,
+				84E2B57D1DA8EB7300D05259 /* EmoticonKeyboard */,
 				84B940B81DA6B7340036BDA3 /* Compose */,
 				8430257F1D97F12F006A9C9B /* Oauth */,
 				84C5FF7E1D93F6150062EEA3 /* Home */,
@@ -423,6 +432,26 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		84E2B57D1DA8EB7300D05259 /* EmoticonKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				84E2B57E1DA8EB7E00D05259 /* View */,
+			);
+			name = EmoticonKeyboard;
+			sourceTree = "<group>";
+		};
+		84E2B57E1DA8EB7E00D05259 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84E2B57F1DA8EBF400D05259 /* Emoticons.bundle */,
+				84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */,
+				84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */,
+				84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */,
+			);
+			name = View;
+			path = EmoticonKeyboard/View;
+			sourceTree = "<group>";
+		};
 		84F5DCD21D95658A00C95B57 /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +541,7 @@
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
 				84B940C61DA6C3F10036BDA3 /* ComposeViewButtons.plist in Resources */,
+				84E2B5801DA8EBF400D05259 /* Emoticons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +611,9 @@
 				84F5DCCF1D9552C300C95B57 /* UILabel+Extension.swift in Sources */,
 				84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */,
 				84B940C21DA6B9CC0036BDA3 /* UIImage+Extension.swift in Sources */,
+				84E2B5861DA8F89400D05259 /* DQEmoticonPageCell.swift in Sources */,
 				843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */,
+				84E2B5841DA8F14C00D05259 /* DQEmoticonToolBar.swift in Sources */,
 				843025A91D9803E0006A9C9B /* DQUserAccountViewModel.swift in Sources */,
 				84C5FF9F1D9412180062EEA3 /* DQSearchBarButton.swift in Sources */,
 				84F5DCD11D95548C00C95B57 /* UIButton+Extension.swift in Sources */,
@@ -606,6 +638,7 @@
 				84C5FF9B1D940D580062EEA3 /* UIBarButtonItem+Extension.swift in Sources */,
 				84F5DCD41D9566DB00C95B57 /* DQNetworkTools.swift in Sources */,
 				845CFBE51D9C349800C56951 /* DQRefreshControl.swift in Sources */,
+				84E2B5821DA8EE0400D05259 /* DQEmoticonKeyboardView.swift in Sources */,
 				84C5FF651D93EE730062EEA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

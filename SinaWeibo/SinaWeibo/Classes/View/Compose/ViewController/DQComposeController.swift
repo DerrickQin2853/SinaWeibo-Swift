@@ -92,14 +92,21 @@ class DQComposeController: UIViewController {
     @objc internal func toolBarButtonClick(btn: UIButton) {
         switch btn.tag {
         case 0:
-            print("发布图片")
+//            print("发布图片")
             selectPictureController.addPicture()
         case 1:
             print("@某人")
         case 2:
             print("发布话题")
         case 3:
-            print("发送表情")
+//            print("发送表情")
+            if !textView.isFirstResponder {
+                textView.becomeFirstResponder()
+            }
+            
+            textView.inputView = (textView.inputView == nil ? emoticonKeyboardView : nil)
+            
+            textView.reloadInputViews()
         case 4:
             print("更多")
         default:
@@ -108,6 +115,11 @@ class DQComposeController: UIViewController {
     }
     
     private lazy var composeViewModel: DQComposeViewModel = DQComposeViewModel()
+    
+    lazy var emoticonKeyboardView: DQEmoticonKeyboardView = {
+       let keyboardView = DQEmoticonKeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: emoticonKeyboardHeight))
+       return keyboardView
+    }()
     
     internal lazy var selectPictureController: DQPictureSelectViewController = {
        let layout = UICollectionViewFlowLayout()
