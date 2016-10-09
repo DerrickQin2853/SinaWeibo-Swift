@@ -25,13 +25,23 @@ class DQComposeViewModel: NSObject {
     }
     
     //发布文字带图微博
-    func postStatusWithOnePicture(statusText: String, image: UIImage , finish:@escaping ((Bool) -> ())) {
+    func postStatusWithOnePicture(statusText: String, images: [UIImage] , finish:@escaping ((Bool) -> ())) {
         let urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
         let parameters = ["access_token" : DQUserAccountViewModel.sharedViewModel.userInfo?.access_token ?? "" ,
                           "status" : statusText]
         DQNetworkTools.sharedTools.post(urlString, parameters: parameters, constructingBodyWith: { (formData) in
-            let imageData = UIImagePNGRepresentation(image)
-            formData.appendPart(withFileData: imageData!, name: "pic", fileName: "Weibopic2016", mimeType: "application/octet-stream")
+            
+//            var tempData = Data()
+//            
+//            for value in images.enumerated() {
+//                let imageData = UIImagePNGRepresentation(value.element)
+//                
+//                tempData.append(imageData!)
+//               
+//            }
+            let imageData = UIImagePNGRepresentation(images.last!)
+             formData.appendPart(withFileData: imageData!, name: "pic", fileName: "Weibopic2016", mimeType: "application/octet-stream")
+            
             }, progress: nil, success: { (_, _) in
                 finish(true)
             }) { (_, error) in

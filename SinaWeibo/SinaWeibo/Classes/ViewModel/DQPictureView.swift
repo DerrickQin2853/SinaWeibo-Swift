@@ -45,9 +45,18 @@ class DQPictureCell: UICollectionViewCell {
     var pictureInfo: DQStatusPictureInfo? {
         didSet{
             let url = URL(string: pictureInfo?.wap360_pic ?? "")
-            cellImageView.sd_setImage(with: url)
-            //设置gif标
-            gificon.isHidden = !url!.absoluteString.hasSuffix(".gif")
+            
+            if url!.absoluteString.hasSuffix(".gif") {
+                gificon.isHidden = false
+                let urlTemp = URL(string: pictureInfo?.bmiddle_pic ?? "")
+                cellImageView.sd_setImage(with: urlTemp)
+            }
+            else{
+                gificon.isHidden = true
+                let urlTemp = URL(string: pictureInfo?.wap360_pic ?? "")
+                cellImageView.sd_setImage(with: urlTemp)
+            }
+            
         }
     }
     

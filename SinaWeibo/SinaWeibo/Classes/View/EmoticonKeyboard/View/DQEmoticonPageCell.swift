@@ -8,6 +8,8 @@
 
 import UIKit
 
+let emoticonPageControlHeight: CGFloat = 30
+
 class DQEmoticonPageCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
@@ -21,19 +23,64 @@ class DQEmoticonPageCell: UICollectionViewCell {
     
     
     private func setupUI() {
-        contentView.addSubview(testLabel)
-        testLabel.snp.makeConstraints { (make) in
-            make.center.equalTo(self.contentView)
+        addChildButton()
+    }
+    
+    private func addChildButton() {
+        
+        let buttonWidth = ScreenWidth / 7
+        let buttonHeight = (emoticonKeyboardHeight - emoticonToolBarHeight - emoticonPageControlHeight) / 3
+        
+        for i in 0..<emoticonPageMaxCount {
+            let button = DQEmoticonButton()
+            
+            let colIndex = i % 7
+            let rawIndex = i / 7
+            
+            let buttonX = CGFloat(colIndex) * buttonWidth
+            let buttonY = CGFloat(rawIndex) * buttonHeight
+            
+            button.frame = CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight)
+            
+//            button.backgroundColor = randomColor()
+            button.adjustsImageWhenHighlighted = false
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+            contentView.addSubview(button)
+            buttonArray.append(button)
+            button.addTarget(self, action: #selector(emoticonButtonClick(btn:)), for: .touchUpInside)
         }
+        
+        //删除按钮
+        let deleteButton = UIButton()
+        deleteButton.frame = CGRect(x: ScreenWidth - buttonWidth, y: buttonHeight * 2, width: buttonWidth, height: buttonHeight)
+        deleteButton.setImage(#imageLiteral(resourceName: "compose_emotion_delete"), for: .normal)
+        deleteButton.adjustsImageWhenHighlighted = false
+        deleteButton.addTarget(self, action: #selector(deleteButtonClick), for: .touchUpInside)
+        contentView.addSubview(deleteButton)
+    }
+    
+    @objc private func emoticonButtonClick(btn: DQEmoticonButton) {
+        DQEmoticonTools.sharedTools.saveRecentEmoticons(emoticon: btn.emoticon!)
+    }
+    
+    @objc private func deleteButtonClick() {
+        
     }
     
     
-    var indexPath: IndexPath? {
+    lazy var buttonArray: [DQEmoticonButton] = [DQEmoticonButton]()
+    
+    var emoticons: [DQEmoticon]? {
         didSet{
-            testLabel.text = "第\(indexPath!.section)组，" + "第\(indexPath!.item)个"
+            for button in buttonArray {
+                button.isHidden = true
+            }
+            for value in emoticons!.enumerated() {
+                let btn = buttonArray[value.offset]
+                btn.isHidden = false
+                btn.emoticon = value.element
+            }
         }
     }
     
-    
-    lazy var testLabel: UILabel = UILabel(title: "", textColor: UIColor.brown, textFontSize: 23)
 }

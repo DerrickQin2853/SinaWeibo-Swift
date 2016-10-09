@@ -66,7 +66,7 @@ class DQComposeController: UIViewController {
                 }
                 SVProgressHUD.showSuccess(withStatus: "发布成功")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    self.dismiss(animated: true, completion: nil)
+                    
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 })
                 
@@ -74,18 +74,21 @@ class DQComposeController: UIViewController {
 
         }
         else{
-            composeViewModel.postStatusWithOnePicture(statusText: textView.text ?? "", image: selectPictureController.images.last!, finish: { (success) in
+            composeViewModel.postStatusWithOnePicture(statusText: textView.text ?? "", images: selectPictureController.images, finish: { (success) in
                 if !success {
                     SVProgressHUD.showError(withStatus: "发布失败，请检查网络设置")
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 }
                 SVProgressHUD.showSuccess(withStatus: "发布成功")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    self.dismiss(animated: true, completion: nil)
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 })
             })
         }
+        
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 0.7)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
