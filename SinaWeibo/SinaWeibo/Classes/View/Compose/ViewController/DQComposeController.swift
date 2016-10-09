@@ -37,6 +37,34 @@ class DQComposeController: UIViewController {
     
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notificate:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(inputEmoticon(notification:)), name: NSNotification.Name(KSelectEmoticon), object: nil)
+    }
+    
+    @objc private func inputEmoticon(notification: Notification) {
+        guard let emoticon = notification.object as? DQEmoticon else {
+            textView.deleteBackward()
+            return
+        }
+        
+        if emoticon.type == 1 {
+            //emoji
+            textView.replace(textView.selectedTextRange!, withText: emoticon.emojiString!)
+            return
+        }
+        
+        let attachment = NSTextAttachment()
+        let bundle = DQEmoticonTools.sharedTools.emoticonBundle
+        attachment.image = UIImage(named: emoticon.imagePath!, in: bundle, compatibleWith: nil)
+        let lineHeight = textView.font?.lineHeight ?? 0
+        //bounds 是相当于自己 一旦设置值 就是和frame是相反
+        attachment.bounds = CGRect(x: 0, y: -5, width: lineHeight, height: lineHeight)
+        let imagetext = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        imagetext.addAttributes([NSFontAttributeName : textView.font!], range: NSMakeRange(0, 1))
+        let strM = NSMutableAttributedString(attributedString: textView.attributedText)
+        let range = textView.selectedRange
+        strM.replaceCharacters(in: textView.selectedRange, with: imagetext)
+        textView.attributedText = strM
+        textView.selectedRange = NSMakeRange(range.location + 1, 0)
     }
 
     @objc private func keyboardWillChange(notificate: Notification) {
@@ -65,10 +93,8 @@ class DQComposeController: UIViewController {
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 }
                 SVProgressHUD.showSuccess(withStatus: "发布成功")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    
-                    SVProgressHUD.dismiss(withDelay: 0.5)
-                })
+                SVProgressHUD.dismiss(withDelay: 0.7)
+                self.dismiss(animated: true, completion: nil)
                 
             }
 
@@ -80,16 +106,10 @@ class DQComposeController: UIViewController {
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 }
                 SVProgressHUD.showSuccess(withStatus: "发布成功")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    SVProgressHUD.dismiss(withDelay: 0.5)
-                })
+                SVProgressHUD.dismiss(withDelay: 0.7)
+                self.dismiss(animated: true, completion: nil)
             })
         }
-        
-        SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 0.7)
-        self.dismiss(animated: true, completion: nil)
-        
     }
     
     @objc internal func toolBarButtonClick(btn: UIButton) {

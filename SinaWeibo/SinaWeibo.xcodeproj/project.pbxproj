@@ -47,6 +47,8 @@
 		84C5FFA31D9414060062EEA3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5FFA21D9414060062EEA3 /* UIView+Extension.swift */; };
 		84D394A51DAA7A0A005AD90B /* DQEmoticonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D394A41DAA7A0A005AD90B /* DQEmoticonButton.swift */; };
 		84D394AD1DAAA177005AD90B /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D394AC1DAAA177005AD90B /* NSString+Emoji.m */; };
+		84D394AF1DAAB307005AD90B /* DQEmoticonPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D394AE1DAAB307005AD90B /* DQEmoticonPopView.xib */; };
+		84D394B11DAAB4BE005AD90B /* DQEmoticonPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D394B01DAAB4BE005AD90B /* DQEmoticonPopView.swift */; };
 		84E2B5801DA8EBF400D05259 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84E2B57F1DA8EBF400D05259 /* Emoticons.bundle */; };
 		84E2B5821DA8EE0400D05259 /* DQEmoticonKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */; };
 		84E2B5841DA8F14C00D05259 /* DQEmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */; };
@@ -109,6 +111,8 @@
 		84D394A41DAA7A0A005AD90B /* DQEmoticonButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonButton.swift; sourceTree = "<group>"; };
 		84D394AB1DAAA177005AD90B /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		84D394AC1DAAA177005AD90B /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		84D394AE1DAAB307005AD90B /* DQEmoticonPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQEmoticonPopView.xib; sourceTree = "<group>"; };
+		84D394B01DAAB4BE005AD90B /* DQEmoticonPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonPopView.swift; sourceTree = "<group>"; };
 		84E2B57F1DA8EBF400D05259 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		84E2B5811DA8EE0400D05259 /* DQEmoticonKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonKeyboardView.swift; sourceTree = "<group>"; };
 		84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQEmoticonToolBar.swift; sourceTree = "<group>"; };
@@ -469,6 +473,8 @@
 				84E2B5831DA8F14C00D05259 /* DQEmoticonToolBar.swift */,
 				84E2B5851DA8F89400D05259 /* DQEmoticonPageCell.swift */,
 				84D394A41DAA7A0A005AD90B /* DQEmoticonButton.swift */,
+				84D394AE1DAAB307005AD90B /* DQEmoticonPopView.xib */,
+				84D394B01DAAB4BE005AD90B /* DQEmoticonPopView.swift */,
 			);
 			name = View;
 			path = EmoticonKeyboard/View;
@@ -568,6 +574,7 @@
 				843025BB1D9A52BB006A9C9B /* DQStatusesCell.xib in Resources */,
 				84C5FFA11D9412310062EEA3 /* DQSearchBarButton.xib in Resources */,
 				845CFBE31D9BDF8800C56951 /* DQRetweetedCell.xib in Resources */,
+				84D394AF1DAAB307005AD90B /* DQEmoticonPopView.xib in Resources */,
 				84C5FF6F1D93EE730062EEA3 /* LaunchScreen.storyboard in Resources */,
 				84C5FF6C1D93EE730062EEA3 /* Assets.xcassets in Resources */,
 				84B940C61DA6C3F10036BDA3 /* ComposeViewButtons.plist in Resources */,
@@ -642,6 +649,7 @@
 				84F5DCCD1D954F2F00C95B57 /* DQVisitorLoginView.swift in Sources */,
 				84B940C21DA6B9CC0036BDA3 /* UIImage+Extension.swift in Sources */,
 				84E2B5861DA8F89400D05259 /* DQEmoticonPageCell.swift in Sources */,
+				84D394B11DAAB4BE005AD90B /* DQEmoticonPopView.swift in Sources */,
 				84E2B58B1DA90B8700D05259 /* DQEmoticonTools.swift in Sources */,
 				843025AB1D98246D006A9C9B /* DQUserInfo.swift in Sources */,
 				84D394AD1DAAA177005AD90B /* NSString+Emoji.m in Sources */,

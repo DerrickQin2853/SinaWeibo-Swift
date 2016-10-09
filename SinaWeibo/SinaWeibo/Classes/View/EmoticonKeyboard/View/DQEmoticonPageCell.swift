@@ -24,6 +24,51 @@ class DQEmoticonPageCell: UICollectionViewCell {
     
     private func setupUI() {
         addChildButton()
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(gesture:)))
+        contentView.addGestureRecognizer(longPress)
+    }
+    
+    @objc private func longPress(gesture: UILongPressGestureRecognizer) {
+        let point = gesture.location(in: contentView)
+        
+        guard let btn = findEmoticonButton(point: point) else {
+            popView.removeFromSuperview()
+            return
+        }
+        
+        if btn.isHidden == true {
+            popView.removeFromSuperview()
+            return
+        }
+        
+        switch gesture.state {
+        case .began,.changed:
+            let keyboardWindow = UIApplication.shared.windows.last!
+            
+            let rect = btn.superview!.convert(btn.frame, to: window)
+            //let rect =  btn.convert(btn.bounds, to: window)
+            popView.center.x = rect.midX
+            popView.frame.origin.y = rect.maxY - popView.bounds.height
+            //给表情按钮设置模型
+            popView.emoticonButton.emoticon = btn.emoticon
+            keyboardWindow.addSubview(popView)
+            popView.showEmoticon()
+//            btn.isHidden = true
+        default:
+            popView.removeFromSuperview()
+//            btn.isHidden = false
+
+        }
+    }
+    
+    private func findEmoticonButton(point: CGPoint) -> DQEmoticonButton? {
+        for btn in buttonArray {
+            if btn.frame.contains(point) {
+                return btn
+            }
+        }
+        return nil
     }
     
     private func addChildButton() {
@@ -61,14 +106,19 @@ class DQEmoticonPageCell: UICollectionViewCell {
     
     @objc private func emoticonButtonClick(btn: DQEmoticonButton) {
         DQEmoticonTools.sharedTools.saveRecentEmoticons(emoticon: btn.emoticon!)
+        NotificationCenter.default.post(name: NSNotification.Name(KSelectEmoticon), object: btn.emoticon)
     }
     
     @objc private func deleteButtonClick() {
-        
+        NotificationCenter.default.post(name: NSNotification.Name(KSelectEmoticon), object: nil)
     }
     
     
     lazy var buttonArray: [DQEmoticonButton] = [DQEmoticonButton]()
+    
+    lazy var popView: DQEmoticonPopView = {
+      return DQEmoticonPopView.loadPopoView()
+    }()
     
     var emoticons: [DQEmoticon]? {
         didSet{
