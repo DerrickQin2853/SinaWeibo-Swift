@@ -25,12 +25,22 @@ class DQEmoticonTools: NSObject {
     
     func saveRecentEmoticons(emoticon: DQEmoticon) {
         
-        if recentEmoticons.contains(emoticon) {
-            guard let index = recentEmoticons.index(of: emoticon) else {
-                return
+//        if recentEmoticons.contains(emoticon) {
+//            guard let index = recentEmoticons.index(of: emoticon) else {
+//                return
+//            }
+//            recentEmoticons.remove(at: index)
+//        }
+        
+        for value in recentEmoticons.enumerated() {
+            if value.element.chs == emoticon.chs && emoticon.type == 0 {
+                recentEmoticons.remove(at: value.offset)
             }
-            recentEmoticons.remove(at: index)
+            else if value.element.code == emoticon.code && emoticon.type == 1 {
+                recentEmoticons.remove(at: value.offset)
+            }
         }
+        
         recentEmoticons.insert(emoticon, at: 0)
         
         if recentEmoticons.count > 20 {

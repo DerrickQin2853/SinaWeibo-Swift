@@ -52,6 +52,10 @@ class DQComposeController: UIViewController {
             return
         }
         
+        if !textView.hasText {
+            placeHolderLabel.isHidden = true
+        }
+        
         let attachment = NSTextAttachment()
         let bundle = DQEmoticonTools.sharedTools.emoticonBundle
         attachment.image = UIImage(named: emoticon.imagePath!, in: bundle, compatibleWith: nil)
@@ -65,6 +69,7 @@ class DQComposeController: UIViewController {
         strM.replaceCharacters(in: textView.selectedRange, with: imagetext)
         textView.attributedText = strM
         textView.selectedRange = NSMakeRange(range.location + 1, 0)
+
     }
 
     @objc private func keyboardWillChange(notificate: Notification) {
